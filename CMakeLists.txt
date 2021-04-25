@@ -41,7 +41,7 @@ include(${CMAKE_BINARY_DIR}/conanbuildinfo.cmake)
 conan_basic_setup(TARGETS)
 
 
-set(TARGET_NAME shared_class)
+set(TARGET_NAME game_01_shared_class)
 add_library(${TARGET_NAME})
 
 ######## add sub dir
