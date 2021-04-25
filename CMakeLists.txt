@@ -45,7 +45,7 @@ set(TARGET_NAME game_01_shared_class)
 add_library(${TARGET_NAME})
 
 ######## add sub dir
-add_subdirectory(shared_class) 
+add_subdirectory(game_01_shared_class) 
 
 
 ####### link
