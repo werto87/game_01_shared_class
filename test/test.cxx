@@ -1,3 +1,4 @@
+#include "shared_class/serialization.hxx"
 #include <catch2/catch.hpp>
 
 namespace test

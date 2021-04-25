@@ -63,7 +63,7 @@ CONAN_PKG::confu_boost
 )
 
 ####### create executable
-OPTION(BUILD_TESTS "enable tests" OFF)
+OPTION(BUILD_TESTS "enable tests" ON)
 IF(BUILD_TESTS)
     enable_testing()
     add_subdirectory(test) 
