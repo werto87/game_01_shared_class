@@ -1,5 +1,6 @@
 [requires]
 catch2/2.13.1
+confu_boost/0.0.1@confu_boost/0.0.1 # from https://github.com/werto87/confu_boost.git
 [generators]
 cmake
 [options]

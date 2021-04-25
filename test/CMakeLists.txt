@@ -2,6 +2,11 @@ set(TEST_TARGET_NAME _test)
 
 get_target_property(TARGET_SOURCES ${TARGET_NAME} SOURCES)
 get_target_property(TARGET_LIBS ${TARGET_NAME} LINK_LIBRARIES)
+
+if(TARGET_SOURCES-NOTFOUND STREQUAL TARGET_SOURCES)
+  unset(TARGET_SOURCES)
+endif()
+
 add_executable(${TEST_TARGET_NAME} 
 "main.cxx"
 "test.cxx"
@@ -23,3 +28,5 @@ target_include_directories(${TEST_TARGET_NAME} PRIVATE ${CMAKE_CURRENT_SOURCE_DI
 
 add_test(NAME ${TEST_TARGET_NAME}
          COMMAND ${TEST_TARGET_NAME} -r junit) 
+
+         

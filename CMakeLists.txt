@@ -41,11 +41,11 @@ include(${CMAKE_BINARY_DIR}/conanbuildinfo.cmake)
 conan_basic_setup(TARGETS)
 
 
-set(TARGET_NAME project)
-add_executable(${TARGET_NAME})
+set(TARGET_NAME shared_class)
+add_library(${TARGET_NAME})
 
 ######## add sub dir
-add_subdirectory(src) 
+add_subdirectory(shared_class) 
 
 
 ####### link
@@ -59,20 +59,17 @@ target_include_directories(${TARGET_NAME} PRIVATE
 target_link_libraries(${TARGET_NAME} PRIVATE
 ${PROJECT_WARNINGS}
 ${PROJECT_OPTIONS}
-
+CONAN_PKG::confu_boost
 )
 
 ####### create executable
-OPTION(BUILD_TESTS "enable tests" ON)
+OPTION(BUILD_TESTS "enable tests" OFF)
 IF(BUILD_TESTS)
     enable_testing()
     add_subdirectory(test) 
 ENDIF(BUILD_TESTS)
 
-# add main after  add_subdirectory(test) so we can take the sources from ${TARGET_NAME} and dont have to remove main.cxx from that list
-target_sources(${TARGET_NAME} PRIVATE 
-"main.cxx"
-)
+
  
 if (CMAKE_BINARY_DIR)
 target_compile_definitions(${TARGET_NAME} PRIVATE PATH_TO_BINARY="${CMAKE_BINARY_DIR}")
