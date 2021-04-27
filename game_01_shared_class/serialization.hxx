@@ -40,7 +40,6 @@ BOOST_SERIALIZATION_BOILER_PLATE (shared_class::LeaveChannelError)
 
 namespace shared_class
 {
-using sharedClassesTypes = std::variant<JoinChannel, JoinChannelSuccess, JoinChannelError, CreateAccount, CreateAccountSuccess, CreateAccountError, LoginAccount, LoginAccountSuccess, LoginAccountError, BroadCastMessage, BroadCastMessageSuccess, BroadCastMessageError, LeaveChannel, LeaveChannelSuccess, LeaveChannelError>;
-static std::map<std::string, sharedClassesTypes> const sharedClassesLookup{ { "JoinChannel", JoinChannel{} }, { "JoinChannelSuccess", JoinChannelSuccess{} }, { "JoinChannelError", JoinChannelError{} }, { "CreateAccount", CreateAccount{} }, { "CreateAccountSuccess", CreateAccountSuccess{} }, { "CreateAccountError", CreateAccountError{} }, { "LoginAccount", LoginAccount{} }, { "LoginAccountSuccess", LoginAccountSuccess{} }, { "LoginAccountError", LoginAccountError{} }, { "BroadCastMessage", BroadCastMessage{} }, { "BroadCastMessageSuccess", BroadCastMessageSuccess{} }, { "BroadCastMessageError", BroadCastMessageError{} }, { "LeaveChannel", LeaveChannel{} }, { "LeaveChannelSuccess", LeaveChannelSuccess{} }, { "LeaveChannelError", LeaveChannelError{} } };
+typedef boost::fusion::vector<JoinChannel, JoinChannelSuccess, JoinChannelError, CreateAccount, CreateAccountSuccess, CreateAccountError, LoginAccount, LoginAccountSuccess, LoginAccountError, BroadCastMessage, BroadCastMessageSuccess, BroadCastMessageError, LeaveChannel, LeaveChannelSuccess, LeaveChannelError> sharedClassesTypes;
 }
 #endif /* A454B6F4_5E02_4669_955C_18F207EE36D6 */
