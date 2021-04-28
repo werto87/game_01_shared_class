@@ -16,11 +16,12 @@ BOOST_FUSION_DEFINE_STRUCT ((shared_class), LoginAccount, (std::string, accountN
 BOOST_FUSION_DEFINE_STRUCT ((shared_class), LoginAccountSuccess, (std::string, accountId) (std::string, accountName))
 BOOST_FUSION_DEFINE_STRUCT ((shared_class), LoginAccountError, (std::string, accountName) (std::string, error))
 BOOST_FUSION_DEFINE_STRUCT ((shared_class), BroadCastMessage, (std::string, channel) (std::string, message))
-BOOST_FUSION_DEFINE_STRUCT ((shared_class), BroadCastMessageSuccess, (std::string, accountName) (std::string, channel) (std::string, message))
+BOOST_FUSION_DEFINE_STRUCT ((shared_class), BroadCastMessageSuccess, (std::string, channel) (std::string, message))
 BOOST_FUSION_DEFINE_STRUCT ((shared_class), BroadCastMessageError, (std::string, channel) (std::string, password) (std::string, error))
 BOOST_FUSION_DEFINE_STRUCT ((shared_class), LeaveChannel, (std::string, channel))
 BOOST_FUSION_DEFINE_STRUCT ((shared_class), LeaveChannelSuccess, (std::string, channel))
 BOOST_FUSION_DEFINE_STRUCT ((shared_class), LeaveChannelError, (std::string, channel) (std::string, error))
+BOOST_FUSION_DEFINE_STRUCT ((shared_class), Message, (std::string, fromAccount) (std::string, channel) (std::string, message))
 
 BOOST_SERIALIZATION_BOILER_PLATE (shared_class::JoinChannel)
 BOOST_SERIALIZATION_BOILER_PLATE (shared_class::JoinChannelSuccess)
@@ -37,5 +38,6 @@ BOOST_SERIALIZATION_BOILER_PLATE (shared_class::BroadCastMessageError)
 BOOST_SERIALIZATION_BOILER_PLATE (shared_class::LeaveChannel)
 BOOST_SERIALIZATION_BOILER_PLATE (shared_class::LeaveChannelSuccess)
 BOOST_SERIALIZATION_BOILER_PLATE (shared_class::LeaveChannelError)
+BOOST_SERIALIZATION_BOILER_PLATE (shared_class::Message)
 
 #endif /* A454B6F4_5E02_4669_955C_18F207EE36D6 */
