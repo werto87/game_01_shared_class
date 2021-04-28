@@ -38,8 +38,4 @@ BOOST_SERIALIZATION_BOILER_PLATE (shared_class::LeaveChannel)
 BOOST_SERIALIZATION_BOILER_PLATE (shared_class::LeaveChannelSuccess)
 BOOST_SERIALIZATION_BOILER_PLATE (shared_class::LeaveChannelError)
 
-namespace shared_class
-{
-typedef boost::fusion::vector<JoinChannel, JoinChannelSuccess, JoinChannelError, CreateAccount, CreateAccountSuccess, CreateAccountError, LoginAccount, LoginAccountSuccess, LoginAccountError, BroadCastMessage, BroadCastMessageSuccess, BroadCastMessageError, LeaveChannel, LeaveChannelSuccess, LeaveChannelError> sharedClassesTypes;
-}
 #endif /* A454B6F4_5E02_4669_955C_18F207EE36D6 */
