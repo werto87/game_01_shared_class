@@ -15,6 +15,9 @@ BOOST_FUSION_DEFINE_STRUCT ((shared_class), CreateAccountError, (std::string, ac
 BOOST_FUSION_DEFINE_STRUCT ((shared_class), LoginAccount, (std::string, accountName) (std::string, password))
 BOOST_FUSION_DEFINE_STRUCT ((shared_class), LoginAccountSuccess, (std::string, accountId) (std::string, accountName))
 BOOST_FUSION_DEFINE_STRUCT ((shared_class), LoginAccountError, (std::string, accountName) (std::string, error))
+BOOST_FUSION_DEFINE_STRUCT ((shared_class), LogoutAccount, )
+BOOST_FUSION_DEFINE_STRUCT ((shared_class), LogoutAccountSuccess, )
+BOOST_FUSION_DEFINE_STRUCT ((shared_class), LogoutAccountError, )
 BOOST_FUSION_DEFINE_STRUCT ((shared_class), BroadCastMessage, (std::string, channel) (std::string, message))
 BOOST_FUSION_DEFINE_STRUCT ((shared_class), BroadCastMessageSuccess, (std::string, channel) (std::string, message))
 BOOST_FUSION_DEFINE_STRUCT ((shared_class), BroadCastMessageError, (std::string, channel) (std::string, error))
@@ -39,5 +42,8 @@ BOOST_SERIALIZATION_BOILER_PLATE (shared_class::LeaveChannel)
 BOOST_SERIALIZATION_BOILER_PLATE (shared_class::LeaveChannelSuccess)
 BOOST_SERIALIZATION_BOILER_PLATE (shared_class::LeaveChannelError)
 BOOST_SERIALIZATION_BOILER_PLATE (shared_class::Message)
+BOOST_SERIALIZATION_BOILER_PLATE (shared_class::LogoutAccount)
+BOOST_SERIALIZATION_BOILER_PLATE (shared_class::LogoutAccountSuccess)
+BOOST_SERIALIZATION_BOILER_PLATE (shared_class::LogoutAccountError)
 
 #endif /* A454B6F4_5E02_4669_955C_18F207EE36D6 */
