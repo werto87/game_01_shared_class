@@ -8,7 +8,7 @@
 
 BOOST_FUSION_DEFINE_STRUCT ((shared_class), JoinChannel, (std::string, channel))
 BOOST_FUSION_DEFINE_STRUCT ((shared_class), JoinChannelSuccess, (std::string, channel))
-BOOST_FUSION_DEFINE_STRUCT ((shared_class), JoinChannelError, (std::string, channel))
+BOOST_FUSION_DEFINE_STRUCT ((shared_class), JoinChannelError, (std::string, channel) (std::string, error))
 BOOST_FUSION_DEFINE_STRUCT ((shared_class), CreateAccount, (std::string, accountName) (std::string, password))
 BOOST_FUSION_DEFINE_STRUCT ((shared_class), CreateAccountSuccess, (std::string, accountName))
 BOOST_FUSION_DEFINE_STRUCT ((shared_class), CreateAccountError, (std::string, accountName) (std::string, error))
