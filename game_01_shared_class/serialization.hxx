@@ -31,8 +31,8 @@ BOOST_FUSION_DEFINE_STRUCT ((shared_class), CreateGameLobbyError, (std::string, 
 BOOST_FUSION_DEFINE_STRUCT ((shared_class), JoinGameLobby, (std::string, name) (std::string, password))
 BOOST_FUSION_DEFINE_STRUCT ((shared_class), JoinGameLobbySuccess, )
 BOOST_FUSION_DEFINE_STRUCT ((shared_class), JoinGameLobbyError, )
-BOOST_FUSION_DEFINE_STRUCT ((shared_class), UserInGameLobby, (std::string, name) (std::string, accountName))
-BOOST_FUSION_DEFINE_STRUCT ((shared_class), UsersInGameLobby, (std::vector<shared_class::UserInGameLobby>, users))
+BOOST_FUSION_DEFINE_STRUCT ((shared_class), UserInGameLobby, (std::string, accountName))
+BOOST_FUSION_DEFINE_STRUCT ((shared_class), UsersInGameLobby, (std::string, name) (std::vector<shared_class::UserInGameLobby>, users))
 
 BOOST_SERIALIZATION_BOILER_PLATE (shared_class::JoinChannel)
 BOOST_SERIALIZATION_BOILER_PLATE (shared_class::JoinChannelSuccess)
