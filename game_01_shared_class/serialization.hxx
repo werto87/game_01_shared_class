@@ -36,6 +36,7 @@ BOOST_FUSION_DEFINE_STRUCT ((shared_class), UserInGameLobby, (std::string, accou
 BOOST_FUSION_DEFINE_STRUCT ((shared_class), UsersInGameLobby, (std::string, name) (std::vector<shared_class::UserInGameLobby>, users) (size_t, maxUserSize))
 BOOST_FUSION_DEFINE_STRUCT ((shared_class), SetMaxUserSizeInCreateGameLobby, (std::string, createGameLobbyName) (size_t, maxUserSize))
 BOOST_FUSION_DEFINE_STRUCT ((shared_class), SetMaxUserSizeInCreateGameLobbyError, (std::string, createGameLobbyName) (std::string, error))
+BOOST_FUSION_DEFINE_STRUCT ((shared_class), MaxUserSizeInCreateGameLobby, (size_t, maxUserSize))
 
 BOOST_SERIALIZATION_BOILER_PLATE (shared_class::JoinChannel)
 BOOST_SERIALIZATION_BOILER_PLATE (shared_class::JoinChannelSuccess)
@@ -65,6 +66,7 @@ BOOST_SERIALIZATION_BOILER_PLATE (shared_class::JoinGameLobbyError)
 BOOST_SERIALIZATION_BOILER_PLATE (shared_class::UserInGameLobby)
 BOOST_SERIALIZATION_BOILER_PLATE (shared_class::UsersInGameLobby)
 BOOST_SERIALIZATION_BOILER_PLATE (shared_class::SetMaxUserSizeInCreateGameLobby)
+BOOST_SERIALIZATION_BOILER_PLATE (shared_class::MaxUserSizeInCreateGameLobby)
 BOOST_SERIALIZATION_BOILER_PLATE (shared_class::SetMaxUserSizeInCreateGameLobbyError)
 
 #endif /* A454B6F4_5E02_4669_955C_18F207EE36D6 */
