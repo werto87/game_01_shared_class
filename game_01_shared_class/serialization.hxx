@@ -40,7 +40,7 @@ BOOST_FUSION_DEFINE_STRUCT ((shared_class), MaxUserSizeInCreateGameLobby, (size_
 BOOST_FUSION_DEFINE_STRUCT ((shared_class), LeaveGameLobby, )
 BOOST_FUSION_DEFINE_STRUCT ((shared_class), LeaveGameLobbySuccess, )
 BOOST_FUSION_DEFINE_STRUCT ((shared_class), LeaveGameLobbyError, (std::string, error))
-BOOST_FUSION_DEFINE_STRUCT ((shared_class), WantToRelog, (std::vector<std::string>, destination))
+BOOST_FUSION_DEFINE_STRUCT ((shared_class), WantToRelog, (std::string, destination))
 BOOST_FUSION_DEFINE_STRUCT ((shared_class), RelogTo, (std::string, destination))
 
 BOOST_SERIALIZATION_BOILER_PLATE (shared_class::JoinChannel)
