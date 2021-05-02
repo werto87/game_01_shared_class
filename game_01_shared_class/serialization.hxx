@@ -69,5 +69,6 @@ BOOST_SERIALIZATION_BOILER_PLATE (shared_class::UsersInGameLobby)
 BOOST_SERIALIZATION_BOILER_PLATE (shared_class::SetMaxUserSizeInCreateGameLobby)
 BOOST_SERIALIZATION_BOILER_PLATE (shared_class::MaxUserSizeInCreateGameLobby)
 BOOST_SERIALIZATION_BOILER_PLATE (shared_class::SetMaxUserSizeInCreateGameLobbyError)
+BOOST_SERIALIZATION_BOILER_PLATE (shared_class::LeaveGameLobby)
 
 #endif /* A454B6F4_5E02_4669_955C_18F207EE36D6 */
