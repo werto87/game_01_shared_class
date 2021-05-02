@@ -63,5 +63,6 @@ BOOST_SERIALIZATION_BOILER_PLATE (shared_class::JoinGameLobbySuccess)
 BOOST_SERIALIZATION_BOILER_PLATE (shared_class::JoinGameLobbyError)
 BOOST_SERIALIZATION_BOILER_PLATE (shared_class::UserInGameLobby)
 BOOST_SERIALIZATION_BOILER_PLATE (shared_class::UsersInGameLobby)
+BOOST_SERIALIZATION_BOILER_PLATE (shared_class::SetUserSizeInCreateGameLobby)
 
 #endif /* A454B6F4_5E02_4669_955C_18F207EE36D6 */
