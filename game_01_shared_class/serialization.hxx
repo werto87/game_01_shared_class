@@ -2,6 +2,7 @@
 #define A454B6F4_5E02_4669_955C_18F207EE36D6
 
 #include "confu_boost/confuBoost.hxx"
+#include <cstddef>
 #include <map>
 #include <string>
 #include <variant>
@@ -33,6 +34,7 @@ BOOST_FUSION_DEFINE_STRUCT ((shared_class), JoinGameLobbySuccess, )
 BOOST_FUSION_DEFINE_STRUCT ((shared_class), JoinGameLobbyError, (std::string, name) (std::string, error))
 BOOST_FUSION_DEFINE_STRUCT ((shared_class), UserInGameLobby, (std::string, accountName))
 BOOST_FUSION_DEFINE_STRUCT ((shared_class), UsersInGameLobby, (std::string, name) (std::vector<shared_class::UserInGameLobby>, users))
+BOOST_FUSION_DEFINE_STRUCT ((shared_class), SetUserSizeInCreateGameLobby, (std::string, createGameLobbyName) (size_t, userSize))
 
 BOOST_SERIALIZATION_BOILER_PLATE (shared_class::JoinChannel)
 BOOST_SERIALIZATION_BOILER_PLATE (shared_class::JoinChannelSuccess)
