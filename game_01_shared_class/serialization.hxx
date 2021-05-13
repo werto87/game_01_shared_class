@@ -46,6 +46,7 @@ BOOST_FUSION_DEFINE_STRUCT ((shared_class), WantToRelog, (std::string, accountNa
 BOOST_FUSION_DEFINE_STRUCT ((shared_class), RelogTo, (bool, wantsToRelog))
 BOOST_FUSION_DEFINE_STRUCT ((shared_class), RelogToSuccess, (bool, wantsToRelog))
 BOOST_FUSION_DEFINE_STRUCT ((shared_class), RelogToError, (std::string, error))
+BOOST_FUSION_DEFINE_STRUCT ((shared_class), CreateGame, (std::vector<std::string>, accountNames))
 
 BOOST_SERIALIZATION_BOILER_PLATE (shared_class::JoinChannel)
 BOOST_SERIALIZATION_BOILER_PLATE (shared_class::JoinChannelSuccess)
@@ -86,5 +87,6 @@ BOOST_SERIALIZATION_BOILER_PLATE (shared_class::RelogToError)
 BOOST_SERIALIZATION_BOILER_PLATE (shared_class::RelogToSuccess)
 BOOST_SERIALIZATION_BOILER_PLATE (shared_class::CreateAccountCancel)
 BOOST_SERIALIZATION_BOILER_PLATE (shared_class::LoginAccountCancel)
+BOOST_SERIALIZATION_BOILER_PLATE (shared_class::CreateGame)
 
 #endif /* A454B6F4_5E02_4669_955C_18F207EE36D6 */
