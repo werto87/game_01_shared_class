@@ -60,6 +60,7 @@ target_link_libraries(${TARGET_NAME} PRIVATE
 ${PROJECT_WARNINGS}
 ${PROJECT_OPTIONS}
 CONAN_PKG::confu_boost
+CONAN_PKG::durak
 )
 
 ####### create executable

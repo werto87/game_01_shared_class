@@ -3,6 +3,7 @@
 
 #include "confu_boost/confuBoost.hxx"
 #include <cstddef>
+#include <durak/game.hxx>
 #include <map>
 #include <string>
 #include <variant>
@@ -49,6 +50,7 @@ BOOST_FUSION_DEFINE_STRUCT ((shared_class), RelogToError, (std::string, error))
 BOOST_FUSION_DEFINE_STRUCT ((shared_class), CreateGame, )
 BOOST_FUSION_DEFINE_STRUCT ((shared_class), CreateGameError, (std::string, error))
 BOOST_FUSION_DEFINE_STRUCT ((shared_class), StartGame, )
+BOOST_FUSION_DEFINE_STRUCT ((shared_class), DurakAttack, (std::vector<durak::Card>, cards))
 
 BOOST_SERIALIZATION_BOILER_PLATE (shared_class::JoinChannel)
 BOOST_SERIALIZATION_BOILER_PLATE (shared_class::JoinChannelSuccess)
@@ -92,5 +94,6 @@ BOOST_SERIALIZATION_BOILER_PLATE (shared_class::LoginAccountCancel)
 BOOST_SERIALIZATION_BOILER_PLATE (shared_class::CreateGame)
 BOOST_SERIALIZATION_BOILER_PLATE (shared_class::StartGame)
 BOOST_SERIALIZATION_BOILER_PLATE (shared_class::CreateGameError)
+BOOST_SERIALIZATION_BOILER_PLATE (shared_class::DurakAttack)
 
 #endif /* A454B6F4_5E02_4669_955C_18F207EE36D6 */
