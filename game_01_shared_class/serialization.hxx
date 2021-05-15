@@ -53,6 +53,9 @@ BOOST_FUSION_DEFINE_STRUCT ((shared_class), StartGame, )
 BOOST_FUSION_DEFINE_STRUCT ((shared_class), DurakAttack, (std::vector<durak::Card>, cards))
 BOOST_FUSION_DEFINE_STRUCT ((shared_class), DurakAttackSuccess, )
 BOOST_FUSION_DEFINE_STRUCT ((shared_class), DurakAttackError, (std::string, error))
+BOOST_FUSION_DEFINE_STRUCT ((shared_class), DurakDefend, (std::vector<durak::Card>, cards))
+BOOST_FUSION_DEFINE_STRUCT ((shared_class), DurakDefendSuccess, )
+BOOST_FUSION_DEFINE_STRUCT ((shared_class), DurakDefendError, (std::string, error))
 
 BOOST_SERIALIZATION_BOILER_PLATE (shared_class::JoinChannel)
 BOOST_SERIALIZATION_BOILER_PLATE (shared_class::JoinChannelSuccess)
@@ -99,5 +102,8 @@ BOOST_SERIALIZATION_BOILER_PLATE (shared_class::CreateGameError)
 BOOST_SERIALIZATION_BOILER_PLATE (shared_class::DurakAttack)
 BOOST_SERIALIZATION_BOILER_PLATE (shared_class::DurakAttackSuccess)
 BOOST_SERIALIZATION_BOILER_PLATE (shared_class::DurakAttackError)
+BOOST_SERIALIZATION_BOILER_PLATE (shared_class::DurakDefend)
+BOOST_SERIALIZATION_BOILER_PLATE (shared_class::DurakDefendSuccess)
+BOOST_SERIALIZATION_BOILER_PLATE (shared_class::DurakDefendError)
 
 #endif /* A454B6F4_5E02_4669_955C_18F207EE36D6 */
