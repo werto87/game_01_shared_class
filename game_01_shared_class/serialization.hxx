@@ -53,7 +53,7 @@ BOOST_FUSION_DEFINE_STRUCT ((shared_class), StartGame, )
 BOOST_FUSION_DEFINE_STRUCT ((shared_class), DurakAttack, (std::vector<durak::Card>, cards))
 BOOST_FUSION_DEFINE_STRUCT ((shared_class), DurakAttackSuccess, )
 BOOST_FUSION_DEFINE_STRUCT ((shared_class), DurakAttackError, (std::string, error))
-BOOST_FUSION_DEFINE_STRUCT ((shared_class), DurakDefend, (std::vector<durak::Card>, cards))
+BOOST_FUSION_DEFINE_STRUCT ((shared_class), DurakDefend, (durak::Card, cardToBeat) (durak::Card, card))
 BOOST_FUSION_DEFINE_STRUCT ((shared_class), DurakDefendSuccess, )
 BOOST_FUSION_DEFINE_STRUCT ((shared_class), DurakDefendError, (std::string, error))
 
