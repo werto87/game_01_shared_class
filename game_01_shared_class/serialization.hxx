@@ -2,6 +2,17 @@
 #define A454B6F4_5E02_4669_955C_18F207EE36D6
 
 #include "confu_boost/confuBoost.hxx"
+#include <boost/hana/assert.hpp>
+#include <boost/hana/at_key.hpp>
+#include <boost/hana/equal.hpp>
+#include <boost/hana/find.hpp>
+#include <boost/hana/for_each.hpp>
+#include <boost/hana/integral_constant.hpp>
+#include <boost/hana/map.hpp>
+#include <boost/hana/optional.hpp>
+#include <boost/hana/pair.hpp>
+#include <boost/hana/tuple.hpp>
+#include <boost/hana/type.hpp>
 #include <cstddef>
 #include <durak/game.hxx>
 #include <map>
@@ -112,4 +123,61 @@ BOOST_SERIALIZATION_BOILER_PLATE (shared_class::DurakDefendingPlayerWantsToTakeC
 BOOST_SERIALIZATION_BOILER_PLATE (shared_class::DurakDefendingPlayerWantsToTakeCardsFromTableSuccess)
 BOOST_SERIALIZATION_BOILER_PLATE (shared_class::DurakDefendingPlayerWantsToTakeCardsFromTableError)
 
+// clang-format off
+namespace shared_class{
+static boost::hana::tuple<
+JoinChannel,
+JoinChannelSuccess,
+JoinChannelError,
+CreateAccount,
+CreateAccountSuccess,
+CreateAccountError,
+LoginAccount,
+LoginAccountSuccess,
+LoginAccountError,
+BroadCastMessage,
+BroadCastMessageSuccess,
+BroadCastMessageError,
+LeaveChannel,
+LeaveChannelSuccess,
+LeaveChannelError,
+Message,
+LogoutAccount,
+LogoutAccountSuccess,
+LogoutAccountError,
+CreateGameLobby,
+CreateGameLobbySuccess,
+CreateGameLobbyError,
+JoinGameLobby,
+JoinGameLobbySuccess,
+JoinGameLobbyError,
+UserInGameLobby,
+UsersInGameLobby,
+SetMaxUserSizeInCreateGameLobby,
+MaxUserSizeInCreateGameLobby,
+SetMaxUserSizeInCreateGameLobbyError,
+LeaveGameLobby,
+LeaveGameLobbySuccess,
+LeaveGameLobbyError,
+WantToRelog,
+RelogTo,
+RelogToError,
+RelogToSuccess,
+CreateAccountCancel,
+LoginAccountCancel,
+CreateGame,
+StartGame,
+CreateGameError,
+DurakAttack,
+DurakAttackSuccess,
+DurakAttackError,
+DurakDefend,
+DurakDefendSuccess,
+DurakDefendError,
+DurakDefendingPlayerWantsToTakeCardsFromTable,
+DurakDefendingPlayerWantsToTakeCardsFromTableSuccess,
+DurakDefendingPlayerWantsToTakeCardsFromTableError
+  >  const sharedClasses{};
+}
+// clang-format on
 #endif /* A454B6F4_5E02_4669_955C_18F207EE36D6 */
