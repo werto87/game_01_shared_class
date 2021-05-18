@@ -67,9 +67,15 @@ BOOST_FUSION_DEFINE_STRUCT ((shared_class), DurakAttackError, (std::string, erro
 BOOST_FUSION_DEFINE_STRUCT ((shared_class), DurakDefend, (durak::Card, cardToBeat) (durak::Card, card))
 BOOST_FUSION_DEFINE_STRUCT ((shared_class), DurakDefendSuccess, )
 BOOST_FUSION_DEFINE_STRUCT ((shared_class), DurakDefendError, (std::string, error))
-BOOST_FUSION_DEFINE_STRUCT ((shared_class), DurakDefendingPlayerWantsToTakeCardsFromTable, )
-BOOST_FUSION_DEFINE_STRUCT ((shared_class), DurakDefendingPlayerWantsToTakeCardsFromTableSuccess, )
-BOOST_FUSION_DEFINE_STRUCT ((shared_class), DurakDefendingPlayerWantsToTakeCardsFromTableError, (std::string, error))
+BOOST_FUSION_DEFINE_STRUCT ((shared_class), DurakAttackPass, )
+BOOST_FUSION_DEFINE_STRUCT ((shared_class), DurakAttackPassSuccess, )
+BOOST_FUSION_DEFINE_STRUCT ((shared_class), DurakAttackPassError, (std::string, error))
+BOOST_FUSION_DEFINE_STRUCT ((shared_class), DurakAssistsPass, )
+BOOST_FUSION_DEFINE_STRUCT ((shared_class), DurakAssistsPassSuccess, )
+BOOST_FUSION_DEFINE_STRUCT ((shared_class), DurakAssistsPassError, (std::string, error))
+BOOST_FUSION_DEFINE_STRUCT ((shared_class), DurakdefendPass, )
+BOOST_FUSION_DEFINE_STRUCT ((shared_class), DurakdefendPassSuccess, )
+BOOST_FUSION_DEFINE_STRUCT ((shared_class), DurakdefendPassError, (std::string, error))
 
 BOOST_SERIALIZATION_BOILER_PLATE (shared_class::JoinChannel)
 BOOST_SERIALIZATION_BOILER_PLATE (shared_class::JoinChannelSuccess)
@@ -119,9 +125,15 @@ BOOST_SERIALIZATION_BOILER_PLATE (shared_class::DurakAttackError)
 BOOST_SERIALIZATION_BOILER_PLATE (shared_class::DurakDefend)
 BOOST_SERIALIZATION_BOILER_PLATE (shared_class::DurakDefendSuccess)
 BOOST_SERIALIZATION_BOILER_PLATE (shared_class::DurakDefendError)
-BOOST_SERIALIZATION_BOILER_PLATE (shared_class::DurakDefendingPlayerWantsToTakeCardsFromTable)
-BOOST_SERIALIZATION_BOILER_PLATE (shared_class::DurakDefendingPlayerWantsToTakeCardsFromTableSuccess)
-BOOST_SERIALIZATION_BOILER_PLATE (shared_class::DurakDefendingPlayerWantsToTakeCardsFromTableError)
+BOOST_SERIALIZATION_BOILER_PLATE (shared_class::DurakAttackPass)
+BOOST_SERIALIZATION_BOILER_PLATE (shared_class::DurakAttackPassSuccess)
+BOOST_SERIALIZATION_BOILER_PLATE (shared_class::DurakAttackPassError)
+BOOST_SERIALIZATION_BOILER_PLATE (shared_class::DurakAssistsPass)
+BOOST_SERIALIZATION_BOILER_PLATE (shared_class::DurakAssistsPassSuccess)
+BOOST_SERIALIZATION_BOILER_PLATE (shared_class::DurakAssistsPassError)
+BOOST_SERIALIZATION_BOILER_PLATE (shared_class::DurakdefendPass)
+BOOST_SERIALIZATION_BOILER_PLATE (shared_class::DurakdefendPassSuccess)
+BOOST_SERIALIZATION_BOILER_PLATE (shared_class::DurakdefendPassError)
 
 // clang-format off
 namespace shared_class{
@@ -174,9 +186,15 @@ DurakAttackError,
 DurakDefend,
 DurakDefendSuccess,
 DurakDefendError,
-DurakDefendingPlayerWantsToTakeCardsFromTable,
-DurakDefendingPlayerWantsToTakeCardsFromTableSuccess,
-DurakDefendingPlayerWantsToTakeCardsFromTableError,
+DurakAttackPass,
+DurakAttackPassSuccess,
+DurakAttackPassError,
+DurakAssistsPass,
+DurakAssistsPassSuccess,
+DurakAssistsPassError,
+DurakdefendPass,
+DurakdefendPassSuccess,
+DurakdefendPassError,
 durak::GameData
   >  const sharedClasses{};
 }
