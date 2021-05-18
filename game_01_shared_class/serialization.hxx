@@ -70,9 +70,9 @@ BOOST_FUSION_DEFINE_STRUCT ((shared_class), DurakDefendError, (std::string, erro
 BOOST_FUSION_DEFINE_STRUCT ((shared_class), DurakAttackPass, )
 BOOST_FUSION_DEFINE_STRUCT ((shared_class), DurakAttackPassSuccess, )
 BOOST_FUSION_DEFINE_STRUCT ((shared_class), DurakAttackPassError, (std::string, error))
-BOOST_FUSION_DEFINE_STRUCT ((shared_class), DurakAssistsPass, )
-BOOST_FUSION_DEFINE_STRUCT ((shared_class), DurakAssistsPassSuccess, )
-BOOST_FUSION_DEFINE_STRUCT ((shared_class), DurakAssistsPassError, (std::string, error))
+BOOST_FUSION_DEFINE_STRUCT ((shared_class), DurakAssistPass, )
+BOOST_FUSION_DEFINE_STRUCT ((shared_class), DurakAssistPassSuccess, )
+BOOST_FUSION_DEFINE_STRUCT ((shared_class), DurakAssistPassError, (std::string, error))
 BOOST_FUSION_DEFINE_STRUCT ((shared_class), DurakdefendPass, )
 BOOST_FUSION_DEFINE_STRUCT ((shared_class), DurakdefendPassSuccess, )
 BOOST_FUSION_DEFINE_STRUCT ((shared_class), DurakdefendPassError, (std::string, error))
@@ -128,9 +128,9 @@ BOOST_SERIALIZATION_BOILER_PLATE (shared_class::DurakDefendError)
 BOOST_SERIALIZATION_BOILER_PLATE (shared_class::DurakAttackPass)
 BOOST_SERIALIZATION_BOILER_PLATE (shared_class::DurakAttackPassSuccess)
 BOOST_SERIALIZATION_BOILER_PLATE (shared_class::DurakAttackPassError)
-BOOST_SERIALIZATION_BOILER_PLATE (shared_class::DurakAssistsPass)
-BOOST_SERIALIZATION_BOILER_PLATE (shared_class::DurakAssistsPassSuccess)
-BOOST_SERIALIZATION_BOILER_PLATE (shared_class::DurakAssistsPassError)
+BOOST_SERIALIZATION_BOILER_PLATE (shared_class::DurakAssistPass)
+BOOST_SERIALIZATION_BOILER_PLATE (shared_class::DurakAssistPassSuccess)
+BOOST_SERIALIZATION_BOILER_PLATE (shared_class::DurakAssistPassError)
 BOOST_SERIALIZATION_BOILER_PLATE (shared_class::DurakdefendPass)
 BOOST_SERIALIZATION_BOILER_PLATE (shared_class::DurakdefendPassSuccess)
 BOOST_SERIALIZATION_BOILER_PLATE (shared_class::DurakdefendPassError)
@@ -189,9 +189,9 @@ DurakDefendError,
 DurakAttackPass,
 DurakAttackPassSuccess,
 DurakAttackPassError,
-DurakAssistsPass,
-DurakAssistsPassSuccess,
-DurakAssistsPassError,
+DurakAssistPass,
+DurakAssistPassSuccess,
+DurakAssistPassError,
 DurakdefendPass,
 DurakdefendPassSuccess,
 DurakdefendPassError,
