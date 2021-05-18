@@ -78,8 +78,8 @@ BOOST_FUSION_DEFINE_STRUCT ((shared_class), DurakdefendPassSuccess, )
 BOOST_FUSION_DEFINE_STRUCT ((shared_class), DurakdefendPassError, (std::string, error))
 BOOST_FUSION_DEFINE_STRUCT ((shared_class), DurakAskDefendWantToTakeCards, )
 BOOST_FUSION_DEFINE_STRUCT ((shared_class), DurakAskDefendWantToTakeCardsAnswer, (bool, answer))
-BOOST_FUSION_DEFINE_STRUCT ((shared_class), DurakAskAttackAssistWantToTakeCards, )
-BOOST_FUSION_DEFINE_STRUCT ((shared_class), DurakAskAttackAssistWantToTakeCardsAnswer, (bool, answer))
+BOOST_FUSION_DEFINE_STRUCT ((shared_class), DurakDefendWantsToTakeCardsFromTableDoYouWantToAddCards, )
+BOOST_FUSION_DEFINE_STRUCT ((shared_class), DurakDefendWantsToTakeCardsFromTableDoYouWantToAddCardsAnswer, (bool, answer))
 
 BOOST_SERIALIZATION_BOILER_PLATE (shared_class::JoinChannel)
 BOOST_SERIALIZATION_BOILER_PLATE (shared_class::JoinChannelSuccess)
@@ -140,8 +140,8 @@ BOOST_SERIALIZATION_BOILER_PLATE (shared_class::DurakdefendPassSuccess)
 BOOST_SERIALIZATION_BOILER_PLATE (shared_class::DurakdefendPassError)
 BOOST_SERIALIZATION_BOILER_PLATE (shared_class::DurakAskDefendWantToTakeCards)
 BOOST_SERIALIZATION_BOILER_PLATE (shared_class::DurakAskDefendWantToTakeCardsAnswer)
-BOOST_SERIALIZATION_BOILER_PLATE (shared_class::DurakAskAttackAssistWantToTakeCards)
-BOOST_SERIALIZATION_BOILER_PLATE (shared_class::DurakAskAttackAssistWantToTakeCardsAnswer)
+BOOST_SERIALIZATION_BOILER_PLATE (shared_class::DurakDefendWantsToTakeCardsFromTableDoYouWantToAddCards)
+BOOST_SERIALIZATION_BOILER_PLATE (shared_class::DurakDefendWantsToTakeCardsFromTableDoYouWantToAddCardsAnswer)
 
 // clang-format off
 namespace shared_class{
@@ -206,8 +206,8 @@ DurakdefendPassError,
 durak::GameData,
 DurakAskDefendWantToTakeCards,
 DurakAskDefendWantToTakeCardsAnswer,
-DurakAskAttackAssistWantToTakeCards,
-DurakAskAttackAssistWantToTakeCardsAnswer
+DurakDefendWantsToTakeCardsFromTableDoYouWantToAddCards,
+DurakDefendWantsToTakeCardsFromTableDoYouWantToAddCardsAnswer
   >  const sharedClasses{};
 }
 // clang-format on
