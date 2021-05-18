@@ -81,6 +81,8 @@ BOOST_FUSION_DEFINE_STRUCT ((shared_class), DurakAskDefendWantToTakeCardsAnswer,
 BOOST_FUSION_DEFINE_STRUCT ((shared_class), DurakDefendWantsToTakeCardsFromTableDoYouWantToAddCards, )
 BOOST_FUSION_DEFINE_STRUCT ((shared_class), DurakDefendWantsToTakeCardsFromTableDoYouWantToAddCardsAnswer, (bool, answer))
 BOOST_FUSION_DEFINE_STRUCT ((shared_class), DurakDefendWantsToTakeCardsFromTableDoneAddingCards, )
+BOOST_FUSION_DEFINE_STRUCT ((shared_class), DurakDefendWantsToTakeCardsFromTableDoneAddingCardsSuccess, )
+BOOST_FUSION_DEFINE_STRUCT ((shared_class), DurakDefendWantsToTakeCardsFromTableDoneAddingCardsError, )
 
 BOOST_SERIALIZATION_BOILER_PLATE (shared_class::JoinChannel)
 BOOST_SERIALIZATION_BOILER_PLATE (shared_class::JoinChannelSuccess)
@@ -144,6 +146,8 @@ BOOST_SERIALIZATION_BOILER_PLATE (shared_class::DurakAskDefendWantToTakeCardsAns
 BOOST_SERIALIZATION_BOILER_PLATE (shared_class::DurakDefendWantsToTakeCardsFromTableDoYouWantToAddCards)
 BOOST_SERIALIZATION_BOILER_PLATE (shared_class::DurakDefendWantsToTakeCardsFromTableDoYouWantToAddCardsAnswer)
 BOOST_SERIALIZATION_BOILER_PLATE (shared_class::DurakDefendWantsToTakeCardsFromTableDoneAddingCards)
+BOOST_SERIALIZATION_BOILER_PLATE (shared_class::DurakDefendWantsToTakeCardsFromTableDoneAddingCardsSuccess)
+BOOST_SERIALIZATION_BOILER_PLATE (shared_class::DurakDefendWantsToTakeCardsFromTableDoneAddingCardsError)
 
 // clang-format off
 namespace shared_class{
@@ -210,7 +214,9 @@ DurakAskDefendWantToTakeCards,
 DurakAskDefendWantToTakeCardsAnswer,
 DurakDefendWantsToTakeCardsFromTableDoYouWantToAddCards,
 DurakDefendWantsToTakeCardsFromTableDoYouWantToAddCardsAnswer,
-DurakDefendWantsToTakeCardsFromTableDoneAddingCards
+DurakDefendWantsToTakeCardsFromTableDoneAddingCards,
+DurakDefendWantsToTakeCardsFromTableDoneAddingCardsSuccess,
+DurakDefendWantsToTakeCardsFromTableDoneAddingCardsError
   >  const sharedClasses{};
 }
 // clang-format on
