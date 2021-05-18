@@ -176,7 +176,8 @@ DurakDefendSuccess,
 DurakDefendError,
 DurakDefendingPlayerWantsToTakeCardsFromTable,
 DurakDefendingPlayerWantsToTakeCardsFromTableSuccess,
-DurakDefendingPlayerWantsToTakeCardsFromTableError
+DurakDefendingPlayerWantsToTakeCardsFromTableError,
+durak::GameData
   >  const sharedClasses{};
 }
 // clang-format on
