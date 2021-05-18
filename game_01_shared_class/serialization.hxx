@@ -76,6 +76,10 @@ BOOST_FUSION_DEFINE_STRUCT ((shared_class), DurakAssistPassError, (std::string, 
 BOOST_FUSION_DEFINE_STRUCT ((shared_class), DurakdefendPass, )
 BOOST_FUSION_DEFINE_STRUCT ((shared_class), DurakdefendPassSuccess, )
 BOOST_FUSION_DEFINE_STRUCT ((shared_class), DurakdefendPassError, (std::string, error))
+BOOST_FUSION_DEFINE_STRUCT ((shared_class), DurakAskDefendWantToTakeCards, )
+BOOST_FUSION_DEFINE_STRUCT ((shared_class), DurakAskDefendWantToTakeCardsAnswer, (bool, answer))
+BOOST_FUSION_DEFINE_STRUCT ((shared_class), DurakAskAttackAssistWantToTakeCards, )
+BOOST_FUSION_DEFINE_STRUCT ((shared_class), DurakAskAttackAssistWantToTakeCardsAnswer, (bool, answer))
 
 BOOST_SERIALIZATION_BOILER_PLATE (shared_class::JoinChannel)
 BOOST_SERIALIZATION_BOILER_PLATE (shared_class::JoinChannelSuccess)
@@ -134,6 +138,10 @@ BOOST_SERIALIZATION_BOILER_PLATE (shared_class::DurakAssistPassError)
 BOOST_SERIALIZATION_BOILER_PLATE (shared_class::DurakdefendPass)
 BOOST_SERIALIZATION_BOILER_PLATE (shared_class::DurakdefendPassSuccess)
 BOOST_SERIALIZATION_BOILER_PLATE (shared_class::DurakdefendPassError)
+BOOST_SERIALIZATION_BOILER_PLATE (shared_class::DurakAskDefendWantToTakeCards)
+BOOST_SERIALIZATION_BOILER_PLATE (shared_class::DurakAskDefendWantToTakeCardsAnswer)
+BOOST_SERIALIZATION_BOILER_PLATE (shared_class::DurakAskAttackAssistWantToTakeCards)
+BOOST_SERIALIZATION_BOILER_PLATE (shared_class::DurakAskAttackAssistWantToTakeCardsAnswer)
 
 // clang-format off
 namespace shared_class{
@@ -195,7 +203,11 @@ DurakAssistPassError,
 DurakdefendPass,
 DurakdefendPassSuccess,
 DurakdefendPassError,
-durak::GameData
+durak::GameData,
+DurakAskDefendWantToTakeCards,
+DurakAskDefendWantToTakeCardsAnswer,
+DurakAskAttackAssistWantToTakeCards,
+DurakAskAttackAssistWantToTakeCardsAnswer
   >  const sharedClasses{};
 }
 // clang-format on
