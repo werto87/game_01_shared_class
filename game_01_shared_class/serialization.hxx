@@ -78,6 +78,8 @@ BOOST_FUSION_DEFINE_STRUCT ((shared_class), DurakdefendPassSuccess, )
 BOOST_FUSION_DEFINE_STRUCT ((shared_class), DurakdefendPassError, (std::string, error))
 BOOST_FUSION_DEFINE_STRUCT ((shared_class), DurakAskDefendWantToTakeCards, )
 BOOST_FUSION_DEFINE_STRUCT ((shared_class), DurakAskDefendWantToTakeCardsAnswer, (bool, answer))
+BOOST_FUSION_DEFINE_STRUCT ((shared_class), DurakAskDefendWantToTakeCardsAnswerSuccess, )
+BOOST_FUSION_DEFINE_STRUCT ((shared_class), DurakAskDefendWantToTakeCardsAnswerError, (std::string, error))
 BOOST_FUSION_DEFINE_STRUCT ((shared_class), DurakDefendWantsToTakeCardsFromTableDoYouWantToAddCards, )
 BOOST_FUSION_DEFINE_STRUCT ((shared_class), DurakDefendWantsToTakeCardsFromTableDoYouWantToAddCardsAnswer, (bool, answer))
 BOOST_FUSION_DEFINE_STRUCT ((shared_class), DurakDefendWantsToTakeCardsFromTableDoneAddingCards, )
@@ -143,6 +145,8 @@ BOOST_SERIALIZATION_BOILER_PLATE (shared_class::DurakdefendPassSuccess)
 BOOST_SERIALIZATION_BOILER_PLATE (shared_class::DurakdefendPassError)
 BOOST_SERIALIZATION_BOILER_PLATE (shared_class::DurakAskDefendWantToTakeCards)
 BOOST_SERIALIZATION_BOILER_PLATE (shared_class::DurakAskDefendWantToTakeCardsAnswer)
+BOOST_SERIALIZATION_BOILER_PLATE (shared_class::DurakAskDefendWantToTakeCardsAnswerSuccess)
+BOOST_SERIALIZATION_BOILER_PLATE (shared_class::DurakAskDefendWantToTakeCardsAnswerError)
 BOOST_SERIALIZATION_BOILER_PLATE (shared_class::DurakDefendWantsToTakeCardsFromTableDoYouWantToAddCards)
 BOOST_SERIALIZATION_BOILER_PLATE (shared_class::DurakDefendWantsToTakeCardsFromTableDoYouWantToAddCardsAnswer)
 BOOST_SERIALIZATION_BOILER_PLATE (shared_class::DurakDefendWantsToTakeCardsFromTableDoneAddingCards)
@@ -212,6 +216,8 @@ DurakdefendPassError,
 durak::GameData,
 DurakAskDefendWantToTakeCards,
 DurakAskDefendWantToTakeCardsAnswer,
+DurakAskDefendWantToTakeCardsAnswerSuccess,
+DurakAskDefendWantToTakeCardsAnswerError,
 DurakDefendWantsToTakeCardsFromTableDoYouWantToAddCards,
 DurakDefendWantsToTakeCardsFromTableDoYouWantToAddCardsAnswer,
 DurakDefendWantsToTakeCardsFromTableDoneAddingCards,
