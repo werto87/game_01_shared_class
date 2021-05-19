@@ -73,9 +73,9 @@ BOOST_FUSION_DEFINE_STRUCT ((shared_class), DurakAttackPassError, (std::string, 
 BOOST_FUSION_DEFINE_STRUCT ((shared_class), DurakAssistPass, )
 BOOST_FUSION_DEFINE_STRUCT ((shared_class), DurakAssistPassSuccess, )
 BOOST_FUSION_DEFINE_STRUCT ((shared_class), DurakAssistPassError, (std::string, error))
-BOOST_FUSION_DEFINE_STRUCT ((shared_class), DurakdefendPass, )
-BOOST_FUSION_DEFINE_STRUCT ((shared_class), DurakdefendPassSuccess, )
-BOOST_FUSION_DEFINE_STRUCT ((shared_class), DurakdefendPassError, (std::string, error))
+BOOST_FUSION_DEFINE_STRUCT ((shared_class), DurakDefendPass, )
+BOOST_FUSION_DEFINE_STRUCT ((shared_class), DurakDefendPassSuccess, )
+BOOST_FUSION_DEFINE_STRUCT ((shared_class), DurakDefendPassError, (std::string, error))
 BOOST_FUSION_DEFINE_STRUCT ((shared_class), DurakAskDefendWantToTakeCards, )
 BOOST_FUSION_DEFINE_STRUCT ((shared_class), DurakAskDefendWantToTakeCardsAnswer, (bool, answer))
 BOOST_FUSION_DEFINE_STRUCT ((shared_class), DurakAskDefendWantToTakeCardsAnswerSuccess, )
@@ -140,9 +140,9 @@ BOOST_SERIALIZATION_BOILER_PLATE (shared_class::DurakAttackPassError)
 BOOST_SERIALIZATION_BOILER_PLATE (shared_class::DurakAssistPass)
 BOOST_SERIALIZATION_BOILER_PLATE (shared_class::DurakAssistPassSuccess)
 BOOST_SERIALIZATION_BOILER_PLATE (shared_class::DurakAssistPassError)
-BOOST_SERIALIZATION_BOILER_PLATE (shared_class::DurakdefendPass)
-BOOST_SERIALIZATION_BOILER_PLATE (shared_class::DurakdefendPassSuccess)
-BOOST_SERIALIZATION_BOILER_PLATE (shared_class::DurakdefendPassError)
+BOOST_SERIALIZATION_BOILER_PLATE (shared_class::DurakDefendPass)
+BOOST_SERIALIZATION_BOILER_PLATE (shared_class::DurakDefendPassSuccess)
+BOOST_SERIALIZATION_BOILER_PLATE (shared_class::DurakDefendPassError)
 BOOST_SERIALIZATION_BOILER_PLATE (shared_class::DurakAskDefendWantToTakeCards)
 BOOST_SERIALIZATION_BOILER_PLATE (shared_class::DurakAskDefendWantToTakeCardsAnswer)
 BOOST_SERIALIZATION_BOILER_PLATE (shared_class::DurakAskDefendWantToTakeCardsAnswerSuccess)
@@ -210,9 +210,9 @@ DurakAttackPassError,
 DurakAssistPass,
 DurakAssistPassSuccess,
 DurakAssistPassError,
-DurakdefendPass,
-DurakdefendPassSuccess,
-DurakdefendPassError,
+DurakDefendPass,
+DurakDefendPassSuccess,
+DurakDefendPassError,
 durak::GameData,
 DurakAskDefendWantToTakeCards,
 DurakAskDefendWantToTakeCardsAnswer,
