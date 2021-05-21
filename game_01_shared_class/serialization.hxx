@@ -87,6 +87,7 @@ BOOST_FUSION_DEFINE_STRUCT ((shared_class), DurakDefendWantsToTakeCardsFromTable
 BOOST_FUSION_DEFINE_STRUCT ((shared_class), DurakDefendWantsToTakeCardsFromTableDoneAddingCardsError, (std::string, error))
 BOOST_FUSION_DEFINE_STRUCT ((shared_class), DurakGameOverWon, )
 BOOST_FUSION_DEFINE_STRUCT ((shared_class), DurakGameOverLose, )
+BOOST_FUSION_DEFINE_STRUCT ((shared_class), DurakGameOverDraw, )
 
 BOOST_SERIALIZATION_BOILER_PLATE (shared_class::JoinChannel)
 BOOST_SERIALIZATION_BOILER_PLATE (shared_class::JoinChannelSuccess)
@@ -156,6 +157,7 @@ BOOST_SERIALIZATION_BOILER_PLATE (shared_class::DurakDefendWantsToTakeCardsFromT
 BOOST_SERIALIZATION_BOILER_PLATE (shared_class::DurakDefendWantsToTakeCardsFromTableDoneAddingCardsError)
 BOOST_SERIALIZATION_BOILER_PLATE (shared_class::DurakGameOverWon)
 BOOST_SERIALIZATION_BOILER_PLATE (shared_class::DurakGameOverLose)
+BOOST_SERIALIZATION_BOILER_PLATE (shared_class::DurakGameOverDraw)
 
 // clang-format off
 namespace shared_class{
@@ -228,7 +230,8 @@ DurakDefendWantsToTakeCardsFromTableDoneAddingCards,
 DurakDefendWantsToTakeCardsFromTableDoneAddingCardsSuccess,
 DurakDefendWantsToTakeCardsFromTableDoneAddingCardsError,
 DurakGameOverWon,
-DurakGameOverLose
+DurakGameOverLose,
+DurakGameOverDraw
   >  const sharedClasses{};
 }
 // clang-format on
