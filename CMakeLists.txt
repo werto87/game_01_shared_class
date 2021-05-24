@@ -1,5 +1,5 @@
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fcoroutines")
-set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -fuse-ld=lld -fcoroutines")
+#set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fcoroutines-ts")
+#set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -fuse-ld=lld -fcoroutines-ts")
 #set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -fcoroutines -v")
 cmake_minimum_required(VERSION 3.17)
 project(project VERSION 1.0.0
@@ -37,6 +37,10 @@ target_compile_features(${PROJECT_OPTIONS} INTERFACE cxx_std_20)
 #include(cmake/StaticAnalyzers.cmake) 
  
 ######## conan setup
+set(WASM  FALSE)
+if(WASM)
+set(CONAN_DISABLE_CHECK_COMPILER ON)
+endif(WASM)
 include(${CMAKE_BINARY_DIR}/conanbuildinfo.cmake)
 conan_basic_setup(TARGETS)
 
@@ -49,22 +53,44 @@ add_subdirectory(game_01_shared_class)
 
 
 ####### link
+IF(WASM)
 target_include_directories(${TARGET_NAME} PRIVATE ${CMAKE_CURRENT_BINARY_DIR})
 target_include_directories(${TARGET_NAME} PRIVATE
   $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}>
   $<INSTALL_INTERFACE:${CMAKE_INSTALL_INCLUDEDIR}>
+  /home/walde/some_boost_test/modular-boost
+  /home/walde/projects/confu_boost/
+  /home/walde/projects/durak
+)
+else()
+  target_include_directories(${TARGET_NAME} PRIVATE ${CMAKE_CURRENT_BINARY_DIR})
+  target_include_directories(${TARGET_NAME} PRIVATE
+  $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}>
+  $<INSTALL_INTERFACE:${CMAKE_INSTALL_INCLUDEDIR}>
+)
+endif()
+
+if(WASM)
+message("WASM TRUE")
+  target_link_libraries(${TARGET_NAME} PRIVATE
+  ${PROJECT_WARNINGS}
+  ${PROJECT_OPTIONS}
+  libconfuBoost.a
   )
+else()
+message("WASM FALSE")
+  target_link_libraries(${TARGET_NAME} PRIVATE
+  ${PROJECT_WARNINGS}
+  ${PROJECT_OPTIONS}
+  CONAN_PKG::durak
+  )
+endif()
   
 
-target_link_libraries(${TARGET_NAME} PRIVATE
-${PROJECT_WARNINGS}
-${PROJECT_OPTIONS}
-CONAN_PKG::confu_boost
-CONAN_PKG::durak
-)
+
 
 ####### create executable
-OPTION(BUILD_TESTS "enable tests" ON)
+OPTION(BUILD_TESTS "enable tests" OFF)
 IF(BUILD_TESTS)
     enable_testing()
     add_subdirectory(test) 
