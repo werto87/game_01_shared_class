@@ -78,9 +78,11 @@ template <typename T>
 std::stringstream
 toJson (T const &t)
 {
-  std::stringstream ss;                    // any stream can be used
-  cereal::JSONOutputArchive oarchive (ss); // Create an output archive
-  oarchive (t);
+  std::stringstream ss{}; // any stream can be used
+  {
+    cereal::JSONOutputArchive oarchive (ss); // Create an output archive
+    oarchive (t);
+  }
   return ss;
 }
 
@@ -88,11 +90,15 @@ toJson (T const &t)
 // to specify the template parameter
 template <typename T>
 T
-toObject (std::stringstream ss)
+toObject (std::string const &objectAsString)
 {
-  cereal::JSONInputArchive iarchive (ss); // I do not know why this has to be & instead of const&
-  T t{};
-  iarchive (t);
+  std::stringstream ss{};
+  {
+    ss << objectAsString;
+    cereal::JSONInputArchive iarchive (ss);
+    T t{};
+    iarchive (t);
+  }
   return t;
 }
 
