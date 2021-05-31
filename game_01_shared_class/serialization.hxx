@@ -75,7 +75,7 @@ SERIALIZATION_BOILER_PLATE (shared_class::MyClass)
 } // namespace shared_class
 
 template <typename T>
-std::stringstream
+std::string
 toJson (T const &t)
 {
   std::stringstream ss{}; // any stream can be used
@@ -83,7 +83,7 @@ toJson (T const &t)
     cereal::JSONOutputArchive oarchive (ss); // Create an output archive
     oarchive (t);
   }
-  return ss;
+  return ss.str ();
 }
 
 // TODO think about search for the type by name in some lookup so we dont have
@@ -97,7 +97,6 @@ toObject (std::string const &objectAsString)
   {
     ss << objectAsString;
     cereal::JSONInputArchive iarchive (ss);
-    T t{};
     iarchive (t);
   }
   return t;
@@ -173,6 +172,8 @@ BOOST_FUSION_DEFINE_STRUCT ((shared_class), DurakGameOverWon, )
 BOOST_FUSION_DEFINE_STRUCT ((shared_class), DurakGameOverLose, )
 BOOST_FUSION_DEFINE_STRUCT ((shared_class), DurakGameOverDraw, )
 
+namespace shared_class
+{
 SERIALIZATION_BOILER_PLATE (shared_class::JoinChannel)
 SERIALIZATION_BOILER_PLATE (shared_class::JoinChannelSuccess)
 SERIALIZATION_BOILER_PLATE (shared_class::JoinChannelError)
@@ -242,12 +243,15 @@ SERIALIZATION_BOILER_PLATE (shared_class::DurakDefendWantsToTakeCardsFromTableDo
 SERIALIZATION_BOILER_PLATE (shared_class::DurakGameOverWon)
 SERIALIZATION_BOILER_PLATE (shared_class::DurakGameOverLose)
 SERIALIZATION_BOILER_PLATE (shared_class::DurakGameOverDraw)
+}
+namespace durak
+{
 SERIALIZATION_BOILER_PLATE (durak::Type)
 SERIALIZATION_BOILER_PLATE (durak::PlayerRole)
 SERIALIZATION_BOILER_PLATE (durak::Card)
 SERIALIZATION_BOILER_PLATE (durak::PlayerData)
 SERIALIZATION_BOILER_PLATE (durak::GameData)
-
+}
 // clang-format off
 namespace shared_class{
 static boost::hana::tuple<

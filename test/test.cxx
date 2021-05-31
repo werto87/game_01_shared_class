@@ -4,17 +4,13 @@
 namespace test
 {
 
-SCENARIO ("SCENARIO")
+TEST_CASE ("hello world", "[test]")
 {
-  GIVEN ("GIVEN")
-  {
-
-    WHEN ("WHEN")
-    {
-
-      THEN ("THEN") {}
-    }
-  }
+  auto joinChannel = shared_class::JoinChannel{};
+  joinChannel.channel = "some channel xD";
+  std::cout << toJson (joinChannel) << std::endl;
+  auto testObject = toObject<shared_class::JoinChannel> (toJson (joinChannel));
+  REQUIRE (testObject.channel == "some channel xD");
 }
 
 }
