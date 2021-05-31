@@ -37,7 +37,7 @@ target_compile_features(${PROJECT_OPTIONS} INTERFACE cxx_std_20)
 #include(cmake/StaticAnalyzers.cmake) 
  
 ######## conan setup
-set(WASM  FALSE)
+set(WASM  TRUE)
 if(WASM)
 set(CONAN_DISABLE_CHECK_COMPILER ON)
 endif(WASM)
@@ -59,7 +59,6 @@ target_include_directories(${TARGET_NAME} PRIVATE
   $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}>
   $<INSTALL_INTERFACE:${CMAKE_INSTALL_INCLUDEDIR}>
   /home/walde/some_boost_test/modular-boost
-  /home/walde/projects/confu_boost/
   /home/walde/projects/durak
 )
 else()
@@ -70,19 +69,26 @@ else()
 )
 endif()
 
+
+
 if(WASM)
-message("WASM TRUE")
-  target_link_libraries(${TARGET_NAME} PRIVATE
-  ${PROJECT_WARNINGS}
-  ${PROJECT_OPTIONS}
-  libconfuBoost.a
+  target_link_directories(${TARGET_NAME} PRIVATE
+    /home/walde/wasm_libs/
   )
-else()
-message("WASM FALSE")
   target_link_libraries(${TARGET_NAME} PRIVATE
   ${PROJECT_WARNINGS}
   ${PROJECT_OPTIONS}
   CONAN_PKG::durak
+  CONAN_PKG::cereal
+  CONAN_PKG::boost
+  )
+else()
+  target_link_libraries(${TARGET_NAME} PRIVATE
+  ${PROJECT_WARNINGS}
+  ${PROJECT_OPTIONS}
+  CONAN_PKG::durak
+  CONAN_PKG::cereal
+  CONAN_PKG::boost
   )
 endif()
   
