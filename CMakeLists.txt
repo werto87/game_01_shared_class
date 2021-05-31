@@ -39,6 +39,8 @@ target_compile_features(${PROJECT_OPTIONS} INTERFACE cxx_std_20)
 ######## conan setup
 set(WASM  TRUE)
 if(WASM)
+set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -s WASM=1 -s USE_PTHREADS")
+set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -s WASM=1 -s USE_PTHREADS")
 set(CONAN_DISABLE_CHECK_COMPILER ON)
 endif(WASM)
 include(${CMAKE_BINARY_DIR}/conanbuildinfo.cmake)
@@ -53,44 +55,16 @@ add_subdirectory(game_01_shared_class)
 
 
 ####### link
-IF(WASM)
-target_include_directories(${TARGET_NAME} PRIVATE ${CMAKE_CURRENT_BINARY_DIR})
-target_include_directories(${TARGET_NAME} PRIVATE
-  $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}>
-  $<INSTALL_INTERFACE:${CMAKE_INSTALL_INCLUDEDIR}>
-  /home/walde/some_boost_test/modular-boost
-  /home/walde/projects/durak
-)
-else()
-  target_include_directories(${TARGET_NAME} PRIVATE ${CMAKE_CURRENT_BINARY_DIR})
-  target_include_directories(${TARGET_NAME} PRIVATE
-  $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}>
-  $<INSTALL_INTERFACE:${CMAKE_INSTALL_INCLUDEDIR}>
-)
-endif()
 
 
-
-if(WASM)
-  target_link_directories(${TARGET_NAME} PRIVATE
-    /home/walde/wasm_libs/
-  )
-  target_link_libraries(${TARGET_NAME} PRIVATE
+target_link_libraries(${TARGET_NAME} PRIVATE
   ${PROJECT_WARNINGS}
   ${PROJECT_OPTIONS}
   CONAN_PKG::durak
   CONAN_PKG::cereal
   CONAN_PKG::boost
-  )
-else()
-  target_link_libraries(${TARGET_NAME} PRIVATE
-  ${PROJECT_WARNINGS}
-  ${PROJECT_OPTIONS}
-  CONAN_PKG::durak
-  CONAN_PKG::cereal
-  CONAN_PKG::boost
-  )
-endif()
+)
+
   
 
 
