@@ -93,6 +93,7 @@ T
 toObject (std::string const &objectAsString)
 {
   std::stringstream ss{};
+  T t{};
   {
     ss << objectAsString;
     cereal::JSONInputArchive iarchive (ss);
