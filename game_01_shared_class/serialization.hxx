@@ -1,7 +1,18 @@
 #ifndef A454B6F4_5E02_4669_955C_18F207EE36D6
 #define A454B6F4_5E02_4669_955C_18F207EE36D6
 
-#include "confu_boost/confuBoost.hxx"
+#include <boost/algorithm/string.hpp>
+#include <boost/fusion/adapted/struct/adapt_struct.hpp>
+#include <boost/fusion/adapted/struct/define_struct.hpp>
+#include <boost/fusion/algorithm/query/count.hpp>
+#include <boost/fusion/functional.hpp>
+#include <boost/fusion/include/adapt_struct.hpp>
+#include <boost/fusion/include/algorithm.hpp>
+#include <boost/fusion/include/at.hpp>
+#include <boost/fusion/include/count.hpp>
+#include <boost/fusion/include/define_struct.hpp>
+#include <boost/fusion/sequence/intrinsic/at.hpp>
+#include <boost/fusion/sequence/intrinsic_fwd.hpp>
 #include <boost/hana/assert.hpp>
 #include <boost/hana/at_key.hpp>
 #include <boost/hana/equal.hpp>
@@ -13,11 +24,77 @@
 #include <boost/hana/pair.hpp>
 #include <boost/hana/tuple.hpp>
 #include <boost/hana/type.hpp>
+#include <boost/mpl/for_each.hpp>
+#include <boost/mpl/if.hpp>
+#include <boost/mpl/range_c.hpp>
+#include <cereal/archives/json.hpp>
+#include <cereal/types/vector.hpp>
 #include <cstddef>
 #include <durak/game.hxx>
+#include <iostream>
 #include <map>
+#include <sstream>
 #include <string>
 #include <variant>
+
+template <class Archive, typename T>
+void
+serializationHelper (Archive &ar, T &t)
+{
+  boost::fusion::for_each (boost::mpl::range_c<unsigned, 0, boost::fusion::result_of::size<T>::value> (), [&] (auto index) { ar &cereal::make_nvp (boost::fusion::extension::struct_member_name<T, index>::call (), boost::fusion::at_c<index> (t)); });
+}
+
+// use SERIALIZATION_BOILER_PLATE in a namespace
+// clang-format off
+#ifndef SERIALIZATION_BOILER_PLATE
+#define SERIALIZATION_BOILER_PLATE(NAMESPACE_WITH_TYPE)                                     \
+void prologue(cereal::JSONOutputArchive &ar, const NAMESPACE_WITH_TYPE &) {                 \
+  auto fullName = std::vector<std::string>{};                                               \
+  auto typeWithNamespace = boost::typeindex::type_id<NAMESPACE_WITH_TYPE>().pretty_name();  \
+  boost::algorithm::split(fullName, typeWithNamespace, boost::is_any_of("::"));             \
+  ar.setNextName(fullName.back().c_str());                                                  \
+  ar.startNode();                                                                           \
+}                                                                                           \
+void epilogue(cereal::JSONOutputArchive &ar, const NAMESPACE_WITH_TYPE &) {                 \
+  ar.finishNode();                                                                          \
+}                                                                                           \
+  template <class Archive>                                                                  \
+  void                                                                                      \
+  serialize (Archive &ar, NAMESPACE_WITH_TYPE &t)                                           \
+  {                                                                                         \
+    serializationHelper (ar, t);                                                            \
+  }                                                                                         \
+
+#endif
+// clang-format on
+
+BOOST_FUSION_DEFINE_STRUCT ((shared_class), MyClass, (int, x) (int, y) (int, z))
+namespace shared_class
+{
+SERIALIZATION_BOILER_PLATE (shared_class::MyClass)
+} // namespace shared_class
+
+template <typename T>
+std::stringstream
+toJson (T const &t)
+{
+  std::stringstream ss;                    // any stream can be used
+  cereal::JSONOutputArchive oarchive (ss); // Create an output archive
+  oarchive (t);
+  return ss;
+}
+
+// TODO think about search for the type by name in some lookup so we dont have
+// to specify the template parameter
+template <typename T>
+T
+toObject (std::stringstream ss)
+{
+  cereal::JSONInputArchive iarchive (ss); // I do not know why this has to be & instead of const&
+  T t{};
+  iarchive (t);
+  return t;
+}
 
 BOOST_FUSION_DEFINE_STRUCT ((shared_class), JoinChannel, (std::string, channel))
 BOOST_FUSION_DEFINE_STRUCT ((shared_class), JoinChannelSuccess, (std::string, channel))
@@ -158,6 +235,11 @@ BOOST_SERIALIZATION_BOILER_PLATE (shared_class::DurakDefendWantsToTakeCardsFromT
 BOOST_SERIALIZATION_BOILER_PLATE (shared_class::DurakGameOverWon)
 BOOST_SERIALIZATION_BOILER_PLATE (shared_class::DurakGameOverLose)
 BOOST_SERIALIZATION_BOILER_PLATE (shared_class::DurakGameOverDraw)
+BOOST_SERIALIZATION_BOILER_PLATE (durak::Type)
+BOOST_SERIALIZATION_BOILER_PLATE (durak::PlayerRole)
+BOOST_SERIALIZATION_BOILER_PLATE (durak::Card)
+BOOST_SERIALIZATION_BOILER_PLATE (durak::PlayerData)
+BOOST_SERIALIZATION_BOILER_PLATE (durak::GameData)
 
 // clang-format off
 namespace shared_class{

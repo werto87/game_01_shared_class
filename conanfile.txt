@@ -1,6 +1,10 @@
 [requires]
 catch2/2.13.1
-durak/0.0.1@durak/0.0.1             #from https://github.com/werto87/durak
+cereal/1.3.0
+boost/1.76.0
+#from https://github.com/werto87/durak
+durak/0.0.1   
 [generators]
 cmake
 [options]
+boost:header_only=True
