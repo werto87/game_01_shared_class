@@ -37,10 +37,8 @@ target_compile_features(${PROJECT_OPTIONS} INTERFACE cxx_std_20)
 #include(cmake/StaticAnalyzers.cmake) 
  
 ######## conan setup
-set(WASM  TRUE)
+set(WASM  FALSE)
 if(WASM)
-set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -s WASM=1 -s USE_PTHREADS")
-set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -s WASM=1 -s USE_PTHREADS")
 set(CONAN_DISABLE_CHECK_COMPILER ON)
 endif(WASM)
 include(${CMAKE_BINARY_DIR}/conanbuildinfo.cmake)
@@ -48,7 +46,7 @@ conan_basic_setup(TARGETS)
 
 
 set(TARGET_NAME game_01_shared_class)
-add_library(${TARGET_NAME})
+add_library(${TARGET_NAME} INTERFACE)
 
 ######## add sub dir
 add_subdirectory(game_01_shared_class) 
@@ -57,7 +55,7 @@ add_subdirectory(game_01_shared_class)
 ####### link
 
 
-target_link_libraries(${TARGET_NAME} PRIVATE
+target_link_libraries(${TARGET_NAME} INTERFACE
   ${PROJECT_WARNINGS}
   ${PROJECT_OPTIONS}
   CONAN_PKG::durak
@@ -77,10 +75,7 @@ IF(BUILD_TESTS)
 ENDIF(BUILD_TESTS)
 
 
- 
-if (CMAKE_BINARY_DIR)
-target_compile_definitions(${TARGET_NAME} PRIVATE PATH_TO_BINARY="${CMAKE_BINARY_DIR}")
-endif()
+
 
 ####### include what you use
 #find_program(iwyu_path NAMES include-what-you-use iwyu)
