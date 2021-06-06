@@ -25,6 +25,7 @@ ${TARGET_NAME}
  CONAN_PKG::catch2
  CONAN_PKG::durak
  CONAN_PKG::boost
+ CONAN_PKG::confu_json
 
 ${TARGET_LIBS}
 )
