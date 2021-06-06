@@ -59,8 +59,8 @@ target_link_libraries(${TARGET_NAME} INTERFACE
   ${PROJECT_WARNINGS}
   ${PROJECT_OPTIONS}
   CONAN_PKG::durak
-  CONAN_PKG::cereal
   CONAN_PKG::boost
+  CONAN_PKG::confu_json
 )
 
   

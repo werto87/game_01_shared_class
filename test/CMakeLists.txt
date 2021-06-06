@@ -8,9 +8,9 @@ if(TARGET_SOURCES-NOTFOUND STREQUAL TARGET_SOURCES)
 endif()
 
 add_executable(${TEST_TARGET_NAME} 
-"main.cxx"
-"test.cxx"
-"constant.hxx"
+main.cxx
+constant.hxx
+
 ${TARGET_SOURCES}
  )
 
@@ -24,7 +24,6 @@ ${PROJECT_OPTIONS}
 ${TARGET_NAME}
  CONAN_PKG::catch2
  CONAN_PKG::durak
- CONAN_PKG::cereal
  CONAN_PKG::boost
 
 ${TARGET_LIBS}
