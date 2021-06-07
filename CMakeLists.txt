@@ -25,7 +25,7 @@ set(PROJECT_OPTIONS project_options)
 
 
 add_library(${PROJECT_OPTIONS} INTERFACE)
-target_compile_features(${PROJECT_OPTIONS} INTERFACE cxx_std_20)
+target_compile_features(${PROJECT_OPTIONS} INTERFACE cxx_std_11)
 # target_precompile_headers(${PROJECT_OPTIONS} INTERFACE 
 # )
 
@@ -67,7 +67,7 @@ target_link_libraries(${TARGET_NAME} INTERFACE
 
 
 ####### create executable
-OPTION(BUILD_TESTS "enable tests" OFF)
+OPTION(BUILD_TESTS "enable tests" ON)
 IF(BUILD_TESTS)
     enable_testing()
     add_subdirectory(test) 
