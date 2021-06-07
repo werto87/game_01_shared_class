@@ -58,9 +58,8 @@ add_subdirectory(game_01_shared_class)
 target_link_libraries(${TARGET_NAME} INTERFACE
   ${PROJECT_WARNINGS}
   ${PROJECT_OPTIONS}
-  CONAN_PKG::durak
   CONAN_PKG::boost
-  CONAN_PKG::confu_json
+  CONAN_PKG::durak
 )
 
   
@@ -68,7 +67,7 @@ target_link_libraries(${TARGET_NAME} INTERFACE
 
 
 ####### create executable
-OPTION(BUILD_TESTS "enable tests" ON)
+OPTION(BUILD_TESTS "enable tests" OFF)
 IF(BUILD_TESTS)
     enable_testing()
     add_subdirectory(test) 
