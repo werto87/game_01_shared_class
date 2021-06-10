@@ -22,7 +22,7 @@ set(PROJECT_OPTIONS project_options)
 
 
 add_library(${PROJECT_OPTIONS} INTERFACE)
-target_compile_features(${PROJECT_OPTIONS} INTERFACE cxx_std_20)
+target_compile_features(${PROJECT_OPTIONS} INTERFACE cxx_std_11)
 # target_precompile_headers(${PROJECT_OPTIONS} INTERFACE 
 # )
 
@@ -55,8 +55,8 @@ add_subdirectory(game_01_shared_class)
 target_link_libraries(${TARGET_NAME} INTERFACE
   ${PROJECT_WARNINGS}
   ${PROJECT_OPTIONS}
-  CONAN_PKG::durak
   CONAN_PKG::boost
+  CONAN_PKG::durak
 )
 
   

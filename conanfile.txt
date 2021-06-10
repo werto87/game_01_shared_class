@@ -1,6 +1,7 @@
 [requires]
 catch2/2.13.1
 boost/1.76.0
+durak/0.0.1@werto87/stable   
 [generators]
 cmake
 [options]
