@@ -1,6 +1,3 @@
-#set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fcoroutines-ts")
-#set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -fuse-ld=lld -fcoroutines-ts")
-#set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -fcoroutines -v")
 cmake_minimum_required(VERSION 3.17)
 project(project VERSION 1.0.0
   DESCRIPTION project
@@ -60,7 +57,6 @@ target_link_libraries(${TARGET_NAME} INTERFACE
   ${PROJECT_OPTIONS}
   CONAN_PKG::durak
   CONAN_PKG::boost
-  CONAN_PKG::confu_json
 )
 
   
@@ -68,7 +64,7 @@ target_link_libraries(${TARGET_NAME} INTERFACE
 
 
 ####### create executable
-OPTION(BUILD_TESTS "enable tests" ON)
+OPTION(BUILD_TESTS "enable tests" OFF)
 IF(BUILD_TESTS)
     enable_testing()
     add_subdirectory(test) 
