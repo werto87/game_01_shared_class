@@ -108,6 +108,8 @@ BOOST_FUSION_DEFINE_STRUCT ((shared_class), DurakDefendWantsToTakeCardsFromTable
 BOOST_FUSION_DEFINE_STRUCT ((shared_class), DurakGameOverWon, )
 BOOST_FUSION_DEFINE_STRUCT ((shared_class), DurakGameOverLose, )
 BOOST_FUSION_DEFINE_STRUCT ((shared_class), DurakGameOverDraw, )
+BOOST_FUSION_DEFINE_STRUCT ((shared_class), DurakLeaveGame, )
+BOOST_FUSION_DEFINE_STRUCT ((shared_class), DurakLeaveGameError, (std::string, error))
 
 // clang-format off
 namespace shared_class{
@@ -185,7 +187,9 @@ DurakDefendWantsToTakeCardsFromTableDoneAddingCardsSuccess,
 DurakDefendWantsToTakeCardsFromTableDoneAddingCardsError,
 DurakGameOverWon,
 DurakGameOverLose,
-DurakGameOverDraw
+DurakGameOverDraw,
+DurakLeaveGame,
+DurakLeaveGameError
   >  const sharedClasses{};
 }
 // clang-format on
