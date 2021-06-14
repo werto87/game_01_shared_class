@@ -63,7 +63,8 @@ BOOST_FUSION_DEFINE_STRUCT ((shared_class), JoinGameLobby, (std::string, name) (
 BOOST_FUSION_DEFINE_STRUCT ((shared_class), JoinGameLobbySuccess, )
 BOOST_FUSION_DEFINE_STRUCT ((shared_class), JoinGameLobbyError, (std::string, name) (std::string, error))
 BOOST_FUSION_DEFINE_STRUCT ((shared_class), UserInGameLobby, (std::string, accountName))
-BOOST_FUSION_DEFINE_STRUCT ((shared_class), UsersInGameLobby, (std::string, name) (std::vector<shared_class::UserInGameLobby>, users) (size_t, maxUserSize))
+BOOST_FUSION_DEFINE_STRUCT ((shared_class), UsersInGameLobby, (std::string, name) (std::vector<shared_class::UserInGameLobby>, users) (size_t, maxUserSize) (shared_class::DurakGameOption, durakGameOption))
+BOOST_FUSION_DEFINE_STRUCT ((shared_class), DurakGameOption, (u_int16_t, maxCardValue))
 BOOST_FUSION_DEFINE_STRUCT ((shared_class), SetMaxUserSizeInCreateGameLobby, (std::string, createGameLobbyName) (size_t, maxUserSize))
 BOOST_FUSION_DEFINE_STRUCT ((shared_class), SetMaxUserSizeInCreateGameLobbyError, (std::string, error))
 BOOST_FUSION_DEFINE_STRUCT ((shared_class), MaxUserSizeInCreateGameLobby, (size_t, maxUserSize))
@@ -138,6 +139,7 @@ JoinGameLobbySuccess,
 JoinGameLobbyError,
 UserInGameLobby,
 UsersInGameLobby,
+DurakGameOption,
 SetMaxUserSizeInCreateGameLobby,
 MaxUserSizeInCreateGameLobby,
 SetMaxUserSizeInCreateGameLobbyError,
