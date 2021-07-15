@@ -76,8 +76,8 @@ BOOST_FUSION_DEFINE_STRUCT ((shared_class), LeaveGameLobbySuccess, )
 BOOST_FUSION_DEFINE_STRUCT ((shared_class), LeaveGameLobbyError, (std::string, error))
 BOOST_FUSION_DEFINE_STRUCT ((shared_class), WantToRelog, (std::string, accountName) (std::string, destination))
 BOOST_FUSION_DEFINE_STRUCT ((shared_class), RelogTo, (bool, wantsToRelog))
-BOOST_FUSION_DEFINE_STRUCT ((shared_class), RelogToLobbySuccess, (bool, wantsToRelog))
-BOOST_FUSION_DEFINE_STRUCT ((shared_class), RelogToGameSuccess, (bool, wantsToRelog))
+BOOST_FUSION_DEFINE_STRUCT ((shared_class), RelogToLobbySuccess, )
+BOOST_FUSION_DEFINE_STRUCT ((shared_class), RelogToGameSuccess, )
 BOOST_FUSION_DEFINE_STRUCT ((shared_class), RelogToError, (std::string, error))
 BOOST_FUSION_DEFINE_STRUCT ((shared_class), CreateGame, )
 BOOST_FUSION_DEFINE_STRUCT ((shared_class), CreateGameError, (std::string, error))
@@ -155,7 +155,8 @@ LeaveGameLobbyError,
 WantToRelog,
 RelogTo,
 RelogToError,
-RelogToSuccess,
+RelogToLobbySuccess,
+RelogToGameSuccess,
 CreateAccountCancel,
 LoginAccountCancel,
 CreateGame,
