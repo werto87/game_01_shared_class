@@ -111,6 +111,8 @@ BOOST_FUSION_DEFINE_STRUCT ((shared_class), DurakGameOverLose, )
 BOOST_FUSION_DEFINE_STRUCT ((shared_class), DurakGameOverDraw, )
 BOOST_FUSION_DEFINE_STRUCT ((shared_class), DurakLeaveGame, )
 BOOST_FUSION_DEFINE_STRUCT ((shared_class), DurakLeaveGameError, (std::string, error))
+typedef std::vector<std::pair<std::string, long long int>> UserTimeMilliseconds;
+BOOST_FUSION_DEFINE_STRUCT ((shared_class), DurakTimers, (UserTimeMilliseconds, runningTimeUserTimePointMilliseconds) (UserTimeMilliseconds, pausedTimeUserDurationMilliseconds))
 
 // clang-format off
 namespace shared_class{
@@ -191,7 +193,8 @@ DurakGameOverWon,
 DurakGameOverLose,
 DurakGameOverDraw,
 DurakLeaveGame,
-DurakLeaveGameError
+DurakLeaveGameError,
+DurakTimers
   >  const sharedClasses{};
 }
 // clang-format on
