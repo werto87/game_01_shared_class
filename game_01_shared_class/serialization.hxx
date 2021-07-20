@@ -207,7 +207,9 @@ DurakGameOverDraw,
 DurakLeaveGame,
 DurakLeaveGameError,
 DurakTimers,
-TimerOption
+TimerOption,
+SetTimerOption,
+SetTimerOptionError
   >  const sharedClasses{};
 }
 // clang-format on
