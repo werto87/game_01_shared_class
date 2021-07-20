@@ -114,6 +114,18 @@ BOOST_FUSION_DEFINE_STRUCT ((shared_class), DurakLeaveGameError, (std::string, e
 typedef std::vector<std::pair<std::string, long long int>> UserTimeMilliseconds;
 BOOST_FUSION_DEFINE_STRUCT ((shared_class), DurakTimers, (UserTimeMilliseconds, runningTimeUserTimePointMilliseconds) (UserTimeMilliseconds, pausedTimeUserDurationMilliseconds))
 
+namespace shared_class
+{
+enum struct TimerType
+{
+  resetTimeOnNewRound,
+  addTimeOnNewRound,
+  noTimer
+};
+}
+// TODO there is no support for std::chrono::seconds in confu_json
+BOOST_FUSION_DEFINE_STRUCT ((shared_class), TimerOption, (shared_class::TimerType, timerType) (long long int, timeAtStartInSeconds) (long long int, timeForEachRoundInSeconds))
+
 // clang-format off
 namespace shared_class{
 static boost::hana::tuple<
@@ -194,7 +206,8 @@ DurakGameOverLose,
 DurakGameOverDraw,
 DurakLeaveGame,
 DurakLeaveGameError,
-DurakTimers
+DurakTimers,
+TimerOption
   >  const sharedClasses{};
 }
 // clang-format on
