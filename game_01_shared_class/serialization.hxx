@@ -207,7 +207,6 @@ DurakGameOverDraw,
 DurakLeaveGame,
 DurakLeaveGameError,
 DurakTimers,
-TimerOption,
 SetTimerOption,
 SetTimerOptionError
   >  const sharedClasses{};
