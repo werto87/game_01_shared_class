@@ -118,9 +118,9 @@ namespace shared_class
 {
 enum struct TimerType
 {
+  noTimer,
   resetTimeOnNewRound,
-  addTimeOnNewRound,
-  noTimer
+  addTimeOnNewRound
 };
 }
 // TODO there is no support for std::chrono::seconds in confu_json
