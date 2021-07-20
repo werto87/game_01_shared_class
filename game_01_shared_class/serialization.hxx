@@ -124,7 +124,7 @@ enum struct TimerType
 };
 }
 // TODO there is no support for std::chrono::seconds in confu_json
-BOOST_FUSION_DEFINE_STRUCT ((shared_class), SetTimerOption, (shared_class::TimerType, timerType) (long long int, timeAtStartInSeconds) (long long int, timeForEachRoundInSeconds))
+BOOST_FUSION_DEFINE_STRUCT ((shared_class), SetTimerOption, (shared_class::TimerType, timerType) (int, timeAtStartInSeconds) (int, timeForEachRoundInSeconds))
 BOOST_FUSION_DEFINE_STRUCT ((shared_class), SetTimerOptionError, (std::string, error))
 // clang-format off
 namespace shared_class{
