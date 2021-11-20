@@ -63,7 +63,8 @@ BOOST_FUSION_DEFINE_STRUCT ((shared_class), JoinGameLobby, (std::string, name) (
 BOOST_FUSION_DEFINE_STRUCT ((shared_class), JoinGameLobbySuccess, )
 BOOST_FUSION_DEFINE_STRUCT ((shared_class), JoinGameLobbyError, (std::string, name) (std::string, error))
 BOOST_FUSION_DEFINE_STRUCT ((shared_class), UserInGameLobby, (std::string, accountName))
-BOOST_FUSION_DEFINE_STRUCT ((shared_class), DurakGameOption, (u_int16_t, maxCardValue))
+BOOST_FUSION_DEFINE_STRUCT ((shared_class), DurakSetMaxCardValue, (u_int16_t, maxCardValue))
+BOOST_FUSION_DEFINE_STRUCT ((shared_class), DurakSetMaxCardValueError, (std::string, error))
 BOOST_FUSION_DEFINE_STRUCT ((shared_class), UsersInGameLobby, (std::string, name) (std::vector<shared_class::UserInGameLobby>, users) (size_t, maxUserSize) (shared_class::DurakGameOption, durakGameOption))
 BOOST_FUSION_DEFINE_STRUCT ((shared_class), SetMaxUserSizeInCreateGameLobby, (size_t, maxUserSize))
 BOOST_FUSION_DEFINE_STRUCT ((shared_class), SetMaxUserSizeInCreateGameLobbyError, (std::string, error))
@@ -127,6 +128,9 @@ enum struct TimerType
 // TODO there is no support for std::chrono::seconds in confu_json
 BOOST_FUSION_DEFINE_STRUCT ((shared_class), SetTimerOption, (shared_class::TimerType, timerType) (int, timeAtStartInSeconds) (int, timeForEachRoundInSeconds))
 BOOST_FUSION_DEFINE_STRUCT ((shared_class), SetTimerOptionError, (std::string, error))
+
+BOOST_FUSION_DEFINE_STRUCT ((shared_class), DurakSetDeck, (std::vector<durak::Card>, deck))
+BOOST_FUSION_DEFINE_STRUCT ((shared_class), DurakSetDeckError, (std::string, error))
 // clang-format off
 namespace shared_class{
 static boost::hana::tuple<
@@ -157,7 +161,6 @@ JoinGameLobbySuccess,
 JoinGameLobbyError,
 UserInGameLobby,
 UsersInGameLobby,
-DurakGameOption,
 SetMaxUserSizeInCreateGameLobby,
 MaxUserSizeInCreateGameLobby,
 SetMaxUserSizeInCreateGameLobbyError,
@@ -211,6 +214,10 @@ DurakTimers,
 SetTimerOption,
 SetTimerOptionError,
 DurakAllowedMoves
+DurakSetDeck,
+DurakSetDeckError,
+DurakSetMaxCardValue,
+DurakSetMaxCardValueError
   >  const sharedClasses{};
 }
 // clang-format on
