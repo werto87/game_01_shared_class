@@ -65,7 +65,7 @@ BOOST_FUSION_DEFINE_STRUCT ((shared_class), JoinGameLobbyError, (std::string, na
 BOOST_FUSION_DEFINE_STRUCT ((shared_class), UserInGameLobby, (std::string, accountName))
 BOOST_FUSION_DEFINE_STRUCT ((shared_class), DurakSetMaxCardValue, (u_int16_t, maxCardValue))
 BOOST_FUSION_DEFINE_STRUCT ((shared_class), DurakSetMaxCardValueError, (std::string, error))
-BOOST_FUSION_DEFINE_STRUCT ((shared_class), UsersInGameLobby, (std::string, name) (std::vector<shared_class::UserInGameLobby>, users) (size_t, maxUserSize) (shared_class::DurakGameOption, durakGameOption))
+BOOST_FUSION_DEFINE_STRUCT ((shared_class), UsersInGameLobby, (std::string, name) (std::vector<shared_class::UserInGameLobby>, users) (size_t, maxUserSize) (durak::GameOption, durakGameOption))
 BOOST_FUSION_DEFINE_STRUCT ((shared_class), SetMaxUserSizeInCreateGameLobby, (size_t, maxUserSize))
 BOOST_FUSION_DEFINE_STRUCT ((shared_class), SetMaxUserSizeInCreateGameLobbyError, (std::string, error))
 BOOST_FUSION_DEFINE_STRUCT ((shared_class), MaxUserSizeInCreateGameLobby, (size_t, maxUserSize))
@@ -213,7 +213,7 @@ DurakLeaveGameError,
 DurakTimers,
 SetTimerOption,
 SetTimerOptionError,
-DurakAllowedMoves
+DurakAllowedMoves,
 DurakSetDeck,
 DurakSetDeckError,
 DurakSetMaxCardValue,
