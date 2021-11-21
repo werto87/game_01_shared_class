@@ -129,9 +129,7 @@ enum struct TimerType
 BOOST_FUSION_DEFINE_STRUCT ((shared_class), SetTimerOption, (shared_class::TimerType, timerType) (int, timeAtStartInSeconds) (int, timeForEachRoundInSeconds))
 BOOST_FUSION_DEFINE_STRUCT ((shared_class), SetTimerOptionError, (std::string, error))
 
-BOOST_FUSION_DEFINE_STRUCT ((shared_class), DurakSetDeck, (std::vector<durak::Card>, deck))
-BOOST_FUSION_DEFINE_STRUCT ((shared_class), DurakDeck, (std::vector<durak::Card>, deck))
-BOOST_FUSION_DEFINE_STRUCT ((shared_class), DurakSetDeckError, (std::string, error))
+BOOST_FUSION_DEFINE_STRUCT ((shared_class), GameOptionError, (std::string, error))
 // clang-format off
 namespace shared_class{
 static boost::hana::tuple<
@@ -168,7 +166,7 @@ SetMaxUserSizeInCreateGameLobbyError,
 SetMaxCardValueInCreateGameLobby,
 SetMaxCardValueInCreateGameLobbyError,
 MaxCardValueInCreateGameLobby,
-DurakDeck,
+GameOptionError,
 LeaveGameLobby,
 LeaveGameLobbySuccess,
 LeaveGameLobbyError,
@@ -216,10 +214,9 @@ DurakTimers,
 SetTimerOption,
 SetTimerOptionError,
 DurakAllowedMoves,
-DurakSetDeck,
-DurakSetDeckError,
 DurakSetMaxCardValue,
-DurakSetMaxCardValueError
+DurakSetMaxCardValueError,
+durak::GameOption
   >  const sharedClasses{};
 }
 // clang-format on
