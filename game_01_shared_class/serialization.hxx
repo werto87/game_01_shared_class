@@ -130,6 +130,7 @@ BOOST_FUSION_DEFINE_STRUCT ((shared_class), SetTimerOption, (shared_class::Timer
 BOOST_FUSION_DEFINE_STRUCT ((shared_class), SetTimerOptionError, (std::string, error))
 
 BOOST_FUSION_DEFINE_STRUCT ((shared_class), DurakSetDeck, (std::vector<durak::Card>, deck))
+BOOST_FUSION_DEFINE_STRUCT ((shared_class), DurakDeck, (std::vector<durak::Card>, deck))
 BOOST_FUSION_DEFINE_STRUCT ((shared_class), DurakSetDeckError, (std::string, error))
 // clang-format off
 namespace shared_class{
@@ -167,6 +168,7 @@ SetMaxUserSizeInCreateGameLobbyError,
 SetMaxCardValueInCreateGameLobby,
 SetMaxCardValueInCreateGameLobbyError,
 MaxCardValueInCreateGameLobby,
+DurakDeck,
 LeaveGameLobby,
 LeaveGameLobbySuccess,
 LeaveGameLobbyError,
