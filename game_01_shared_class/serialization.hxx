@@ -109,7 +109,19 @@ BOOST_FUSION_DEFINE_STRUCT ((shared_class), DurakLeaveGame, )
 BOOST_FUSION_DEFINE_STRUCT ((shared_class), DurakLeaveGameError, (std::string, error))
 typedef std::vector<std::pair<std::string, long long int>> UserTimeMilliseconds;
 BOOST_FUSION_DEFINE_STRUCT ((shared_class), DurakTimers, (UserTimeMilliseconds, runningTimeUserTimePointMilliseconds) (UserTimeMilliseconds, pausedTimeUserDurationMilliseconds))
-BOOST_FUSION_DEFINE_STRUCT ((shared_class), DurakAllowedMoves, (std::vector<durak::Move>, allowedMoves))
+namespace shared_class
+{
+enum struct Move
+{
+  AttackAssistPass,
+  AttackAssistDoneAddingCards,
+  AddCards,
+  Defend,
+  TakeCards,
+  DiscardCards
+};
+}
+BOOST_FUSION_DEFINE_STRUCT ((shared_class), DurakAllowedMoves, (std::vector<shared_class::Move>, allowedMoves))
 
 namespace shared_class
 {
