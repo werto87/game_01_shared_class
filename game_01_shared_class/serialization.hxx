@@ -118,7 +118,8 @@ enum struct Move
   AddCards,
   Defend,
   TakeCards,
-  DiscardCards
+  AnswerDefendWantsToTakeCardsYes,
+  AnswerDefendWantsToTakeCardsNo
 };
 }
 BOOST_FUSION_DEFINE_STRUCT ((shared_class), DurakAllowedMoves, (std::vector<shared_class::Move>, allowedMoves))
