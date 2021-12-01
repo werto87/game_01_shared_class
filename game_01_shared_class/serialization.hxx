@@ -136,8 +136,14 @@ enum struct TimerType
 // TODO there is no support for std::chrono::seconds in confu_json
 BOOST_FUSION_DEFINE_STRUCT ((shared_class), SetTimerOption, (shared_class::TimerType, timerType) (int, timeAtStartInSeconds) (int, timeForEachRoundInSeconds))
 BOOST_FUSION_DEFINE_STRUCT ((shared_class), SetTimerOptionError, (std::string, error))
-
 BOOST_FUSION_DEFINE_STRUCT ((shared_class), GameOptionError, (std::string, error))
+
+BOOST_FUSION_DEFINE_STRUCT ((shared_class), JoinQuickGameQueue, )
+BOOST_FUSION_DEFINE_STRUCT ((shared_class), JoinQuickGameQueueError, (std::string, error))
+BOOST_FUSION_DEFINE_STRUCT ((shared_class), JoinQuickGame, (bool, wantsToJoin))
+BOOST_FUSION_DEFINE_STRUCT ((shared_class), JoinQuickGameError, (std::string, error))
+BOOST_FUSION_DEFINE_STRUCT ((shared_class), JoinQuickGameReady, )
+
 // clang-format off
 namespace shared_class{
 static boost::hana::tuple<
@@ -219,7 +225,12 @@ DurakTimers,
 SetTimerOption,
 SetTimerOptionError,
 DurakAllowedMoves,
-durak::GameOption
+durak::GameOption,
+JoinQuickGameQueue,
+JoinQuickGameQueueError,
+JoinQuickGame,
+JoinQuickGameError,
+JoinQuickGameReady
   >  const sharedClasses{};
 }
 // clang-format on
