@@ -139,10 +139,12 @@ BOOST_FUSION_DEFINE_STRUCT ((shared_class), SetTimerOptionError, (std::string, e
 BOOST_FUSION_DEFINE_STRUCT ((shared_class), GameOptionError, (std::string, error))
 
 BOOST_FUSION_DEFINE_STRUCT ((shared_class), JoinQuickGameQueue, )
+BOOST_FUSION_DEFINE_STRUCT ((shared_class), JoinQuickGameQueueSuccess, )
 BOOST_FUSION_DEFINE_STRUCT ((shared_class), JoinQuickGameQueueError, (std::string, error))
-BOOST_FUSION_DEFINE_STRUCT ((shared_class), JoinQuickGame, (bool, wantsToJoin))
-BOOST_FUSION_DEFINE_STRUCT ((shared_class), JoinQuickGameError, (std::string, error))
-BOOST_FUSION_DEFINE_STRUCT ((shared_class), JoinQuickGameReady, )
+BOOST_FUSION_DEFINE_STRUCT ((shared_class), AskIfUserWantsToJoinGame, )
+BOOST_FUSION_DEFINE_STRUCT ((shared_class), GameStartCanceled, )
+BOOST_FUSION_DEFINE_STRUCT ((shared_class), WantsToJoinGame, (bool, answer))
+BOOST_FUSION_DEFINE_STRUCT ((shared_class), WantsToJoinGameError, (std::string, error))
 
 // clang-format off
 namespace shared_class{
@@ -227,6 +229,7 @@ SetTimerOptionError,
 DurakAllowedMoves,
 durak::GameOption,
 JoinQuickGameQueue,
+JoinQuickGameQueueSuccess,
 JoinQuickGameQueueError,
 JoinQuickGame,
 JoinQuickGameError,
