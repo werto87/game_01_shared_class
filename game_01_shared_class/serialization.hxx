@@ -231,9 +231,13 @@ durak::GameOption,
 JoinQuickGameQueue,
 JoinQuickGameQueueSuccess,
 JoinQuickGameQueueError,
-JoinQuickGame,
-JoinQuickGameError,
-JoinQuickGameReady
+JoinQuickGameQueue,
+JoinQuickGameQueueSuccess,
+JoinQuickGameQueueError,
+AskIfUserWantsToJoinGame,
+GameStartCanceled,
+WantsToJoinGame,
+WantsToJoinGameError
   >  const sharedClasses{};
 }
 // clang-format on
