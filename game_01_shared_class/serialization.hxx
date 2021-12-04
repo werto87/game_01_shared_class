@@ -138,12 +138,9 @@ BOOST_FUSION_DEFINE_STRUCT ((shared_class), SetTimerOption, (shared_class::Timer
 BOOST_FUSION_DEFINE_STRUCT ((shared_class), SetTimerOptionError, (std::string, error))
 BOOST_FUSION_DEFINE_STRUCT ((shared_class), GameOptionError, (std::string, error))
 
-BOOST_FUSION_DEFINE_STRUCT ((shared_class), JoinQuickGameQueue, )
-BOOST_FUSION_DEFINE_STRUCT ((shared_class), JoinQuickGameQueueSuccess, )
-BOOST_FUSION_DEFINE_STRUCT ((shared_class), JoinQuickGameQueueError, (std::string, error))
-BOOST_FUSION_DEFINE_STRUCT ((shared_class), JoinRankedGameQueue, )
-BOOST_FUSION_DEFINE_STRUCT ((shared_class), JoinRankedGameQueueSuccess, )
-BOOST_FUSION_DEFINE_STRUCT ((shared_class), JoinRankedGameQueueError, (std::string, error))
+BOOST_FUSION_DEFINE_STRUCT ((shared_class), JoinMatchMakingQueue, (bool, isRanked))
+BOOST_FUSION_DEFINE_STRUCT ((shared_class), JoinMatchMakingQueueSuccess, )
+BOOST_FUSION_DEFINE_STRUCT ((shared_class), JoinMatchMakingQueueError, (std::string, error))
 BOOST_FUSION_DEFINE_STRUCT ((shared_class), AskIfUserWantsToJoinGame, )
 BOOST_FUSION_DEFINE_STRUCT ((shared_class), AskIfUserWantsToJoinGameTimeOut, )
 BOOST_FUSION_DEFINE_STRUCT ((shared_class), GameStartCanceled, )
@@ -238,11 +235,6 @@ SetTimerOption,
 SetTimerOptionError,
 DurakAllowedMoves,
 durak::GameOption,
-JoinQuickGameQueue,
-JoinQuickGameQueueError,
-JoinQuickGameQueue,
-JoinQuickGameQueueSuccess,
-JoinQuickGameQueueError,
 AskIfUserWantsToJoinGame,
 GameStartCanceled,
 WantsToJoinGame,
@@ -253,10 +245,10 @@ LeaveQuickGameQueue,
 LeaveQuickGameQueueSuccess,
 LeaveQuickGameQueueError,
 LoginAsGuest,
-JoinRankedGameQueue,
-JoinRankedGameQueueSuccess,
-JoinRankedGameQueueError,
-LoginAsGuestSuccess
+LoginAsGuestSuccess,
+JoinMatchMakingQueue,
+JoinMatchMakingQueueSuccess,
+JoinMatchMakingQueueError
   >  const sharedClasses{};
 }
 // clang-format on
