@@ -147,7 +147,9 @@ BOOST_FUSION_DEFINE_STRUCT ((shared_class), GameStartCanceled, )
 BOOST_FUSION_DEFINE_STRUCT ((shared_class), GameStartCanceledRemovedFromQueue, )
 BOOST_FUSION_DEFINE_STRUCT ((shared_class), WantsToJoinGame, (bool, answer))
 BOOST_FUSION_DEFINE_STRUCT ((shared_class), WantsToJoinGameError, (std::string, error))
-
+BOOST_FUSION_DEFINE_STRUCT ((shared_class), LeaveQuickGameQueue, )
+BOOST_FUSION_DEFINE_STRUCT ((shared_class), LeaveQuickGameQueueSuccess, )
+BOOST_FUSION_DEFINE_STRUCT ((shared_class), LeaveQuickGameQueueError, (std::string, error))
 // clang-format off
 namespace shared_class{
 static boost::hana::tuple<
@@ -231,7 +233,6 @@ SetTimerOptionError,
 DurakAllowedMoves,
 durak::GameOption,
 JoinQuickGameQueue,
-JoinQuickGameQueueSuccess,
 JoinQuickGameQueueError,
 JoinQuickGameQueue,
 JoinQuickGameQueueSuccess,
@@ -241,7 +242,10 @@ GameStartCanceled,
 WantsToJoinGame,
 WantsToJoinGameError,
 AskIfUserWantsToJoinGameTimeOut,
-GameStartCanceledRemovedFromQueue
+GameStartCanceledRemovedFromQueue,
+LeaveQuickGameQueue,
+LeaveQuickGameQueueSuccess,
+LeaveQuickGameQueueError
   >  const sharedClasses{};
 }
 // clang-format on
