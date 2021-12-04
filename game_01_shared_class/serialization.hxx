@@ -141,6 +141,9 @@ BOOST_FUSION_DEFINE_STRUCT ((shared_class), GameOptionError, (std::string, error
 BOOST_FUSION_DEFINE_STRUCT ((shared_class), JoinQuickGameQueue, )
 BOOST_FUSION_DEFINE_STRUCT ((shared_class), JoinQuickGameQueueSuccess, )
 BOOST_FUSION_DEFINE_STRUCT ((shared_class), JoinQuickGameQueueError, (std::string, error))
+BOOST_FUSION_DEFINE_STRUCT ((shared_class), JoinRankedGameQueue, )
+BOOST_FUSION_DEFINE_STRUCT ((shared_class), JoinRankedGameQueueSuccess, )
+BOOST_FUSION_DEFINE_STRUCT ((shared_class), JoinRankedGameQueueError, (std::string, error))
 BOOST_FUSION_DEFINE_STRUCT ((shared_class), AskIfUserWantsToJoinGame, )
 BOOST_FUSION_DEFINE_STRUCT ((shared_class), AskIfUserWantsToJoinGameTimeOut, )
 BOOST_FUSION_DEFINE_STRUCT ((shared_class), GameStartCanceled, )
@@ -248,7 +251,10 @@ GameStartCanceledRemovedFromQueue,
 LeaveQuickGameQueue,
 LeaveQuickGameQueueSuccess,
 LeaveQuickGameQueueError,
-LoginAsGuest
+LoginAsGuest,
+JoinRankedGameQueue,
+JoinRankedGameQueueSuccess,
+JoinRankedGameQueueError
   >  const sharedClasses{};
 }
 // clang-format on
