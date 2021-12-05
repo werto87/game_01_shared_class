@@ -152,6 +152,7 @@ BOOST_FUSION_DEFINE_STRUCT ((shared_class), LeaveQuickGameQueueSuccess, )
 BOOST_FUSION_DEFINE_STRUCT ((shared_class), LeaveQuickGameQueueError, (std::string, error))
 BOOST_FUSION_DEFINE_STRUCT ((shared_class), LoginAsGuest, )
 BOOST_FUSION_DEFINE_STRUCT ((shared_class), LoginAsGuestSuccess, (std::string, accountName))
+BOOST_FUSION_DEFINE_STRUCT ((shared_class), RaitingChanged, (size_t, oldRaiting) (size_t, newRaiting))
 
 // clang-format off
 namespace shared_class{
@@ -248,7 +249,8 @@ LoginAsGuest,
 LoginAsGuestSuccess,
 JoinMatchMakingQueue,
 JoinMatchMakingQueueSuccess,
-JoinMatchMakingQueueError
+JoinMatchMakingQueueError,
+RaitingChanged
   >  const sharedClasses{};
 }
 // clang-format on
